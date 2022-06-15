@@ -69,7 +69,7 @@
                     <button class=" outline-none text-sm text-white font-bold border rounded-full border-blue-800 px-12 py-2.5">Login</button>
                 </div>
                 <!--====Humberger menu====-->
-                <div class=" block lg:hidden" x-data="{humberger: false}">
+                <div @click.away="humberger=false" class=" block lg:hidden" x-data="{humberger: false}">
                     <!--====menu button====-->
                     <button @click.prevent="humberger=!humberger" aria-label="Mobile Menu button" class="outline-none text-white p-1">
                         <!---->
