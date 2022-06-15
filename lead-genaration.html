@@ -1,0 +1,897 @@
+<!doctype html>
+<html class=" overflow-x-hidden" lang="bn">
+    <!--====================head====================-->
+    <head>
+        <meta name="description" content="Rekindle Data">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#4285f4">
+        <meta property="og:image" content="images/logo/logo.png">
+        <meta property="og:image:type" content="image/jpg">
+        <meta property="og:image:width" content="1024">
+        <meta property="og:image:height" content="729">
+
+
+
+        <link rel="shortcut icon" href="images/logo/logo.png" type="image/x-icon">
+        <link rel="icon" href="images/logo/logo.png" type="image/x-icon">
+        <!--------->
+        <title>Lead Generation || RekindleData</title>
+
+
+        <!-----Tailwind css---->
+        <link rel="stylesheet" href="output/tailwind.css">
+
+    </head>
+
+    <!--====================body====================-->
+    <body class=" bg-neutral-800 font-inter overflow-x-hidden">
+        <!-- ==========header========== -->
+        <header>
+            <!--========-->
+            <nav class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto flex items-center justify-between py-8">
+                <!--====logo====-->
+                <a href="/" class="flex sm:items-end items-start font-josefinsans font-bold sm:text-[34px] text-lg text-white space-x-3">
+                    <!--========-->
+                    <img height="100%" width="100%" class=" sm:w-10 w-5 h-5 sm:h-10 object-cover" src="images/Logo/logo.png" alt="//">
+                    <!--========-->
+                    <p>Rekindle</p>
+                </a>
+                <!--====menu====-->
+                <div class="hidden lg:flex items-center xl:space-x-12 space-x-7">
+                    <!--========-->
+                    <ul class=" flex text-white space-x-7 font-bold text-base">
+                        <!---->
+                        <li>
+                            <a href="lead-genaration.html">Lead Generation</a>
+                        </li>
+                        <!---->
+                        <li>
+                            <a href="website-audits.html">Website Audits</a>
+                        </li>
+                        <!---->
+                        <li>
+                            <a href="consulting.html">Consulting</a>
+                        </li>
+                        <!---->
+                        <li>
+                            <a class=" flex items-end" href="#">
+                                <span>Explore</span> 
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--========-->
+                    <button class=" outline-none text-sm text-white font-bold border rounded-full border-blue-800 px-12 py-2.5">Login</button>
+                </div>
+                <!--====Humberger menu====-->
+                <div class=" block lg:hidden" x-data="{humberger: false}">
+                    <!--====menu button====-->
+                    <button @click.prevent="humberger=!humberger" aria-label="Mobile Menu button" class="outline-none text-white p-1">
+                        <!---->
+                        <svg x-show="humberger===false" xmlns="http://www.w3.org/2000/svg" class="sm:h-12 sm:w-12 w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!---->
+                        <svg x-show="humberger===true" xmlns="http://www.w3.org/2000/svg" class="sm:h-12 sm:w-12 w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <!--====Mobile menu====-->
+                    <div :class="{'translate-x-0' : humberger, '-translate-x-full': !humberger  }"
+                        class="fixed lg:hidden w-3/5 transform transition-transform duration-700 ease-in-out z-50 bg-neutral-800 left-0 top-0 bottom-0 shadow-2xl">
+                        <!--====menu====-->
+                        <div class=" p-5">
+                            <!--====logo====-->
+                            <div class=" my-4">
+                                <!--====logo====-->
+                                <a href="/" class="flex sm:items-end items-start font-josefinsans font-bold sm:text-[34px] text-lg text-white space-x-3">
+                                    <!--========-->
+                                    <img height="100%" width="100%" class=" sm:w-10 w-5 h-5 sm:h-10 object-cover" src="images/Logo/logo.png" alt="//">
+                                    <!--========-->
+                                    <p>Rekindle</p>
+                                </a>
+                            </div>
+                            <!--========-->
+                            <ul class="space-y-4 flex flex-col items-start justify-center text-white font-bold sm:text-base text-xs mt-10">
+                                <!---->
+                                <li>
+                                    <a href="lead-genaration.html">Lead Generation</a>
+                                </li>
+                                <!---->
+                                <li>
+                                    <a href="website-audits.html">Website Audits</a>
+                                </li>
+                                <!---->
+                                <li>
+                                    <a href="consulting.html">Consulting</a>
+                                </li>
+                                <!---->
+                                <li>
+                                    <a class=" flex items-end" href="#">
+                                        <span>Explore</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="sm:h-6 sm:w-6 w-3 h-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!--====================main====================-->
+        <main>
+            <!-- ==========section 001========== -->
+            <section>
+                <!--========-->
+                <div class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto md:min-h-[700px] sm:min-h-[410px] min-h-[210px]  flex md:gap-10 items-center xl:relative sm:mb-32 mb-60">
+                    <!--========-->
+                    <div class="md:w-1/2 w-3/5 relative">
+                        <!--========-->
+                        <h1 class=" lg:text-[44px] sm:text-4xl text-xl font-bold text-white lg:leading-[57px!important] xl:w-4/5">Win Local jobs and grow your business</h1>
+                        <!--========-->
+                        <p class=" lg:text-xl sm:text-base text-[10px] text-white lg:leading-[57px!important] lg:mt-4 sm:mt-3 mt-2 md:mb-16 mb-5 font-mulish">View opportunities in your area for free!</p>
+                        <!--========-->
+                        <form action="#">
+                            <!--========-->
+                            <input class="w-full md:h-14 h-7 px-10 p-3 text-slate-500 rounded-full border border-[#1B47B8] bg-transparent outline-none sm:text-sm text-[8px]" name="search" type="text" id="search" placeholder="What service do you provide?">
+                            <!--========-->
+                            <button type="submit"class="block md:mt-12 mt-5 outline-none lg:text-lg text-xs text-white font-bold rounded-full bg-[#1B47B8] sm:px-12 px-7 py-2 sm:py-3.5 sm:mr-0 sm:ml-auto">Get Started</button>
+                        </form>
+                        <!--===scroll down=====-->
+                        <div class="block absolute sm:-left-12 -left-3 -bottom-24">
+                            <div class="inline-flex items-center transform -rotate-90 w-auto">
+                                <!--========-->
+                                <div class="mr-1 mt-1 lg:w-16 sm:w-10 w-6 h-[1px] bg-blue-700"></div>
+                                <!--========-->
+                                <div class="sm:h-1 sm:w-1 w-0.5 h-0.5 mx-2 rounded-full bg-white"></div>
+                                <!--========-->
+                                <p class="lg:text-xs sm:text-[9px] text-[4px] tracking-[0.005em] text-white font-mulish">Scroll down</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--========-->
+                    <div>
+                        <!--========-->
+                        <img height="100%" width="100%" class=" select-none block md:hidden absolute top-1.5  -right-0.5 w-auto h-auto -z-50" src="images/Lead-genaration/b1m.svg" alt="//">
+                        <!--========-->
+                        <img height="100%" width="100%" class=" select-none hidden md:block xl:hidden absolute -top-2.5 right-0 w-auto h-auto -z-50" src="images/Lead-genaration/b1l.svg" alt="//">
+                        <!--========-->
+                        <img height="100%" width="100%" class=" select-none hidden xl:block absolute top-[-283px] right-[-467px] w-auto h-auto -z-50" src="images/Lead-genaration/b1.svg" alt="//">
+                    </div>
+                    <!--====social====-->
+                    <div class="sm:space-y-7 space-y-3 block absolute xl:right-0 md:right-20 right-10 xl:-bottom-64 bottom-auto z-20 top-[480px] md:top-[845px] lg:top-[945px] xl:top-auto">
+                        <!--====insta====-->
+                        <a class=" text-white block lg:w-5 sm:w-4 w-2 lg:h-5 sm:h-4 h-2" aria-label="instagram"
+                            href="https://www.instagram.com/">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                            </svg>
+                        </a>
+                        <!--====fb====-->
+                        <a class=" text-white block lg:w-5 sm:w-4 w-2 lg:h-5 sm:h-4 h-2" aria-label="facebook"
+                            href="https://www.facebook.com/">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                            </svg>
+                        </a>
+                        <!--====twi====-->
+                        <a class=" text-white block lg:w-5 sm:w-4 w-2 lg:h-5 sm:h-4 h-2" aria-label="Twitter" href="https://twitter.com/">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- ==========section 002========== -->
+            <section class=" relative">
+                <!--========-->
+                <div class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto ">
+                    <!--========-->
+                    <div class=" grid md:grid-cols-2 grid-cols-1 items-center md:gap-20 gap-16">
+                        <!--========-->
+                        <div class="pt-28 pb-20 md:space-y-9 space-y-7 relative">
+                            <!--========-->
+                            <div class=" flex items-start text-blue-50">
+                                <!--========-->
+                                <div class="lg:h-[69px] h-12 w-12 lg:w-[69px] rounded-full bg-blue-50 lg:mr-9 mr-6" ></div>
+                                <!--========-->
+                                <div>
+                                    <!--========-->
+                                    <p class=" font-mulish sm:text-xl text-xs lg:py-3.5 py-3 pb-3.5 lg:mt-2.5">Get Quality Leads</p>
+                                    <!--========-->
+                                    <ul class=" list-disc sm:text-base text-xs space-y-0.5 opacity-60"> 
+                                        <!--========-->
+                                        <li>View Leads locally or nation wide</li>
+                                        <!--========-->
+                                        <li>Review leads for free</li>
+                                        <!--========-->
+                                        <li>Get leads sent to you in real time</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--========-->
+                            <div class=" flex items-start text-blue-50">
+                                <!--========-->
+                                <div class="lg:h-11 h-8 w-8 lg:w-11 rounded-full bg-blue-50 lg:mr-12 md:mr-9 mr-6 ml-3" ></div>
+                                <!--========-->
+                                <div>
+                                    <!--========-->
+                                    <p class=" font-mulish sm:text-xl text-xs lg:py-2 pb-3.5 pt-2.5 sm:pt-0">Win New Clients</p>
+                                    <!--========-->
+                                    <ul class=" list-disc sm:text-base text-xs space-y-0.5 opacity-60"> 
+                                        <!--========-->
+                                        <li>View Leads locally or nation wide</li>
+                                        <!--========-->
+                                        <li>Review leads for free</li>
+                                        <!--========-->
+                                        <li>Get leads sent to you in real time</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--========-->
+                            <div class=" flex items-start text-blue-50">
+                                <!--========-->
+                                <div class="lg:h-11 h-8 w-8 lg:w-11 rounded-full bg-blue-50 lg:mr-12 md:mr-9 mr-6 ml-3" ></div>
+                                <!--========-->
+                                <div>
+                                    <!--========-->
+                                    <p class=" font-mulish sm:text-xl text-xs lg:py-2 pb-3.5 pt-2.5 sm:pt-0">Grow Your Business</p>
+                                    <!--========-->
+                                    <ul class=" list-disc sm:text-base text-xs space-y-0.5 opacity-60"> 
+                                        <!--========-->
+                                        <li>View Leads locally or nation wide</li>
+                                        <!--========-->
+                                        <li>Review leads for free</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--========-->
+                            <div class=" w-[1px] sm:h-[310px] h-[240px] bg-black absolute top-[123px] lg:left-[34px] left-[27px] -z-10"></div>
+                        </div>
+                        <!--========-->
+                        <div class=" w-full">
+                            <!--========-->
+                            <div class="md:w-1/2 sm:w-1/3 w-1/4 h-[33px] sm:h-[38px] lg:h-[54px] rounded-full bg-[#C4C4C4]"></div>
+                            <!--========-->
+                            <div class="md:mt-24 mt-10 w-[85%] h-2.5 rounded-full bg-[#C4C4C4]"></div>
+                            <!--========-->
+                            <div class="md:mt-5 mt-3 w-[90%] h-2.5 rounded-full bg-[#C4C4C4]"></div>
+                            <!--========-->
+                            <div class="md:mt-6 mt-4 w-[95%] h-2.5 rounded-full bg-[#C4C4C4]"></div>
+                            <!--========-->
+                            <div class="md:mt-7 mt-5 w-full h-2.5 rounded-full bg-[#C4C4C4]"></div>
+                            <!--========-->
+                            <ul class=" list-disc list-inside md:mt-7 mt-5">
+                                <!--========-->
+                                <li class=" opacity-60 text-blue-50 sm:text-xs text-base">Get leads sent to you in real time</li>
+                            </ul>
+                        </div>
+                        <!--========-->
+                        <div class=" rounded-tr-[246px] bg-[#1B47B8] absolute left-0 md:right-1/2 right-0 md:h-full -z-50 top-0 bottom-1/3"> </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ==========section 003========== -->
+            <section>
+                <!--========-->
+                <div class="relative xl:py-56 md:py-44 py-24 my-8">
+                    <!--========-->
+                    <div class="w-4/5 md:w-3/4 lg:w-4/5 xl:w-3/5 text-center mx-auto text-white mb-4">
+                        <!--========-->
+                        <h1 class=" lg:text-4xl sm:text-3xl text-lg mb-3 sm:mb-4 lg:mb-6">How do we find your leads?</h1>                    <!--========-->
+                        <p class=" text-[10px] sm:text-sm lg:text-lg">Let our marketing experts connect you instantly with local customers currently shopping for a vehicle. A targeted  marketing programs through our trusted media channels, including.</p>
+                    </div>
+                    <!--====slider carousel====-->
+                    <div>
+                        <!--========-->
+                        <div class=" flex lg:gap-14 sm:gap-11 gap-8 items-center justify-center absolute md:static -left-20 -right-20 sm:-left-28 sm:-right-28">
+                            <!--========-->
+                            <div>
+                                <img height="100%" width="100%" class="w-10 h-10 sm:w-14 sm:h-14 lg:w-20 lg:h-20 mx-auto" src="images/icons/fb.svg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div>
+                                <img height="100%" width="100%" class="w-10 h-10 sm:w-14 sm:h-14 lg:w-20 lg:h-20 mx-auto" src="images/icons/instagram.svg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div>
+                                <img height="100%" width="100%" class="w-10 h-10 sm:w-14 sm:h-14 lg:w-20 lg:h-20 mx-auto" src="images/icons/linkdin.svg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div>
+                                <img height="100%" width="100%" class="w-10 h-10 sm:w-14 sm:h-14 lg:w-20 lg:h-20 mx-auto" src="images/icons/twiter.svg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div>
+                                <img height="100%" width="100%" class="w-10 h-10 sm:w-14 sm:h-14 lg:w-20 lg:h-20 mx-auto" src="images/icons/google.svg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div>
+                                <img height="100%" width="100%" class="w-10 h-10 sm:w-14 sm:h-14 lg:w-20 lg:h-20 mx-auto" src="images/icons/linkdin.svg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div>
+                                <img height="100%" width="100%" class="w-10 h-10 sm:w-14 sm:h-14 lg:w-20 lg:h-20 mx-auto" src="images/icons/teligram.svg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div>
+                                <img height="100%" width="100%" class="w-10 h-10 sm:w-14 sm:h-14 lg:w-20 lg:h-20 mx-auto" src="images/icons/vimeo.svg" alt="//">
+                            </div>
+                            <!--========-->
+                            <div>
+                                <img height="100%" width="100%" class="w-10 h-10 sm:w-14 sm:h-14 lg:w-20 lg:h-20 mx-auto" src="images/icons/github.svg" alt="//">
+                            </div>
+                        </div>
+                        <!--========-->
+                        <div class="flex md:hidden items-center justify-center gap-2.5 sm:pt-16 pt-14">
+                            <!--====left====-->
+                            <button class=" outline-none text-white" aria-label="previous">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <!--====circle====-->
+                            <div class=" flex items-center justify-center gap-2.5">
+                                <!--========-->
+                                <button class=" outline-none bg-white h-2.5 w-2.5 rounded-full" aria-label="1"></button>
+                                <!--========-->
+                                <button class=" outline-none bg-white h-2.5 w-2.5 rounded-full" aria-label="2"></button>
+                                <!--========-->
+                                <button class=" outline-none bg-white h-2.5 w-2.5 rounded-full" aria-label="3"></button>
+                            </div>
+                            <!--====right====-->
+                            <button class=" outline-none text-white" aria-label="next">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                        <!--========-->
+                        <div>
+                            <!--========-->
+                            <img height="100%" width="100%" class="absolute top-0 sm:right-0 -right-24 w-1/2 sm:w-1/4 lg:w-[30%] 2xl:w-auto h-auto object-cover -z-10" src="images/icons/r-arrow-dot.svg" alt="//">
+                            <!--========-->
+                            <img height="100%" width="100%" class="hidden md:block absolute bottom-0 left-0 w-1/2 sm:w-1/4 lg:w-[30%] 2xl:w-auto h-auto object-cover -z-10" src="images/icons/l-arrow-dot.svg" alt="//">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ==========section 004========== -->
+            <section>
+                <!--========-->
+                <div class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto">
+                    <!--====heading====-->
+                    <h1 class="flex items-center justify-center lg:text-[44px] sm:text-[33px] text-2xl text-white font-bold text-center lg:mb-28 mb-20">
+                        <p class="lg:w-24 lg:h-24 sm:w-20 sm:h-20 w-14 h-14 rounded-full bg-[#1B47B8] flex items-center justify-center mr-2"> Our</p>
+                        <p>Features</p>
+                    </h1>
+                    <!--========-->
+                    <div class=" grid sm:grid-cols-3 grid-cols-2 sm:gap-28 gap-4 gap-y-10 sm:gap-y-28 pb-20">
+                        <!--========-->
+                        <div class="text-white text-center">
+                            <!--========-->
+                            <div class="flex items-center justify-center h-[50px] w-[50px] bg-[#1B47B8] rounded-xl shadow-3xl mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.56789 4.56756C4.56789 2.35104 6.36473 0.554199 8.58125 0.554199H18.7971C21.0136 0.554199 22.8104 2.35104 22.8104 4.56756V10.4052C22.8104 12.6217 21.0136 14.4185 18.7971 14.4185H18.0674C17.0599 14.4185 16.2431 13.6018 16.2431 12.5943V8.5288C16.2431 7.75158 15.6131 7.12152 14.8358 7.12152H7.12184C5.71133 7.12152 4.56789 5.97807 4.56789 4.56756ZM8.58125 2.7433C7.57374 2.7433 6.75699 3.56005 6.75699 4.56756C6.75699 4.76906 6.92034 4.93241 7.12184 4.93241H14.8358C16.8221 4.93241 18.4322 6.54257 18.4322 8.5288V12.2294H18.7971C19.8046 12.2294 20.6213 11.4127 20.6213 10.4052V4.56756C20.6213 3.56005 19.8046 2.7433 18.7971 2.7433H8.58125Z"
+                                        fill="#F5F8FF" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.189678 8.94598C0.189678 6.72946 1.98652 4.93262 4.20304 4.93262H14.4189C16.6354 4.93262 18.4322 6.72946 18.4322 8.94598V14.7836C18.4322 17.0001 16.6354 18.797 14.4189 18.797H10.951L7.61102 22.5755C6.43919 23.9012 4.25573 22.9499 4.42868 21.189L4.66361 18.797H4.20304C1.98652 18.797 0.189678 17.0001 0.189678 14.7836V8.94598ZM4.20304 7.12172C3.19553 7.12172 2.37878 7.93847 2.37878 8.94598V14.7836C2.37878 15.7911 3.19553 16.6078 4.20304 16.6078H5.06605C6.14403 16.6078 6.98693 17.5376 6.88157 18.6104L6.7175 20.281L9.4197 17.2239C9.76598 16.8322 10.2637 16.6078 10.7865 16.6078H14.4189C15.4264 16.6078 16.2431 15.7911 16.2431 14.7836V8.94598C16.2431 7.93847 15.4264 7.12172 14.4189 7.12172H4.20304Z"
+                                        fill="#F5F8FF" />
+                                </svg>
+                            </div>
+                            <!--========-->
+                            <p class="text-xs lg:text-base lg:mt-12 sm:mt-10 mt-8 mb-1.5">Exclusive</p>
+                            <!--========-->
+                            <p class="text-[9px] sm:text-[10px] lg:text-sm opacity-90">All leads are 100% exclusive to your dealership</p>
+                        </div>
+                        <!--========-->
+                        <div class="text-white text-center">
+                            <!--========-->
+                            <div class="flex items-center justify-center h-[50px] w-[50px] bg-[#1B47B8] rounded-xl shadow-3xl mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.56789 4.56756C4.56789 2.35104 6.36473 0.554199 8.58125 0.554199H18.7971C21.0136 0.554199 22.8104 2.35104 22.8104 4.56756V10.4052C22.8104 12.6217 21.0136 14.4185 18.7971 14.4185H18.0674C17.0599 14.4185 16.2431 13.6018 16.2431 12.5943V8.5288C16.2431 7.75158 15.6131 7.12152 14.8358 7.12152H7.12184C5.71133 7.12152 4.56789 5.97807 4.56789 4.56756ZM8.58125 2.7433C7.57374 2.7433 6.75699 3.56005 6.75699 4.56756C6.75699 4.76906 6.92034 4.93241 7.12184 4.93241H14.8358C16.8221 4.93241 18.4322 6.54257 18.4322 8.5288V12.2294H18.7971C19.8046 12.2294 20.6213 11.4127 20.6213 10.4052V4.56756C20.6213 3.56005 19.8046 2.7433 18.7971 2.7433H8.58125Z"
+                                        fill="#F5F8FF" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.189678 8.94598C0.189678 6.72946 1.98652 4.93262 4.20304 4.93262H14.4189C16.6354 4.93262 18.4322 6.72946 18.4322 8.94598V14.7836C18.4322 17.0001 16.6354 18.797 14.4189 18.797H10.951L7.61102 22.5755C6.43919 23.9012 4.25573 22.9499 4.42868 21.189L4.66361 18.797H4.20304C1.98652 18.797 0.189678 17.0001 0.189678 14.7836V8.94598ZM4.20304 7.12172C3.19553 7.12172 2.37878 7.93847 2.37878 8.94598V14.7836C2.37878 15.7911 3.19553 16.6078 4.20304 16.6078H5.06605C6.14403 16.6078 6.98693 17.5376 6.88157 18.6104L6.7175 20.281L9.4197 17.2239C9.76598 16.8322 10.2637 16.6078 10.7865 16.6078H14.4189C15.4264 16.6078 16.2431 15.7911 16.2431 14.7836V8.94598C16.2431 7.93847 15.4264 7.12172 14.4189 7.12172H4.20304Z"
+                                        fill="#F5F8FF" />
+                                </svg>
+                            </div>
+                            <!--========-->
+                            <p class="text-xs lg:text-base lg:mt-12 sm:mt-10 mt-8 mb-1.5">Exclusive</p>
+                            <!--========-->
+                            <p class="text-[9px] sm:text-[10px] lg:text-sm opacity-90">All leads are 100% exclusive to your dealership</p>
+                        </div>
+                        <!--========-->
+                        <div class="text-white text-center">
+                            <!--========-->
+                            <div class="flex items-center justify-center h-[50px] w-[50px] bg-[#1B47B8] rounded-xl shadow-3xl mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.56789 4.56756C4.56789 2.35104 6.36473 0.554199 8.58125 0.554199H18.7971C21.0136 0.554199 22.8104 2.35104 22.8104 4.56756V10.4052C22.8104 12.6217 21.0136 14.4185 18.7971 14.4185H18.0674C17.0599 14.4185 16.2431 13.6018 16.2431 12.5943V8.5288C16.2431 7.75158 15.6131 7.12152 14.8358 7.12152H7.12184C5.71133 7.12152 4.56789 5.97807 4.56789 4.56756ZM8.58125 2.7433C7.57374 2.7433 6.75699 3.56005 6.75699 4.56756C6.75699 4.76906 6.92034 4.93241 7.12184 4.93241H14.8358C16.8221 4.93241 18.4322 6.54257 18.4322 8.5288V12.2294H18.7971C19.8046 12.2294 20.6213 11.4127 20.6213 10.4052V4.56756C20.6213 3.56005 19.8046 2.7433 18.7971 2.7433H8.58125Z"
+                                        fill="#F5F8FF" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.189678 8.94598C0.189678 6.72946 1.98652 4.93262 4.20304 4.93262H14.4189C16.6354 4.93262 18.4322 6.72946 18.4322 8.94598V14.7836C18.4322 17.0001 16.6354 18.797 14.4189 18.797H10.951L7.61102 22.5755C6.43919 23.9012 4.25573 22.9499 4.42868 21.189L4.66361 18.797H4.20304C1.98652 18.797 0.189678 17.0001 0.189678 14.7836V8.94598ZM4.20304 7.12172C3.19553 7.12172 2.37878 7.93847 2.37878 8.94598V14.7836C2.37878 15.7911 3.19553 16.6078 4.20304 16.6078H5.06605C6.14403 16.6078 6.98693 17.5376 6.88157 18.6104L6.7175 20.281L9.4197 17.2239C9.76598 16.8322 10.2637 16.6078 10.7865 16.6078H14.4189C15.4264 16.6078 16.2431 15.7911 16.2431 14.7836V8.94598C16.2431 7.93847 15.4264 7.12172 14.4189 7.12172H4.20304Z"
+                                        fill="#F5F8FF" />
+                                </svg>
+                            </div>
+                            <!--========-->
+                            <p class="text-xs lg:text-base lg:mt-12 sm:mt-10 mt-8 mb-1.5">Exclusive</p>
+                            <!--========-->
+                            <p class="text-[9px] sm:text-[10px] lg:text-sm opacity-90">All leads are 100% exclusive to your dealership</p>
+                        </div>
+                        <!--========-->
+                        <div class="text-white text-center">
+                            <!--========-->
+                            <div class="flex items-center justify-center h-[50px] w-[50px] bg-[#1B47B8] rounded-xl shadow-3xl mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.56789 4.56756C4.56789 2.35104 6.36473 0.554199 8.58125 0.554199H18.7971C21.0136 0.554199 22.8104 2.35104 22.8104 4.56756V10.4052C22.8104 12.6217 21.0136 14.4185 18.7971 14.4185H18.0674C17.0599 14.4185 16.2431 13.6018 16.2431 12.5943V8.5288C16.2431 7.75158 15.6131 7.12152 14.8358 7.12152H7.12184C5.71133 7.12152 4.56789 5.97807 4.56789 4.56756ZM8.58125 2.7433C7.57374 2.7433 6.75699 3.56005 6.75699 4.56756C6.75699 4.76906 6.92034 4.93241 7.12184 4.93241H14.8358C16.8221 4.93241 18.4322 6.54257 18.4322 8.5288V12.2294H18.7971C19.8046 12.2294 20.6213 11.4127 20.6213 10.4052V4.56756C20.6213 3.56005 19.8046 2.7433 18.7971 2.7433H8.58125Z"
+                                        fill="#F5F8FF" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.189678 8.94598C0.189678 6.72946 1.98652 4.93262 4.20304 4.93262H14.4189C16.6354 4.93262 18.4322 6.72946 18.4322 8.94598V14.7836C18.4322 17.0001 16.6354 18.797 14.4189 18.797H10.951L7.61102 22.5755C6.43919 23.9012 4.25573 22.9499 4.42868 21.189L4.66361 18.797H4.20304C1.98652 18.797 0.189678 17.0001 0.189678 14.7836V8.94598ZM4.20304 7.12172C3.19553 7.12172 2.37878 7.93847 2.37878 8.94598V14.7836C2.37878 15.7911 3.19553 16.6078 4.20304 16.6078H5.06605C6.14403 16.6078 6.98693 17.5376 6.88157 18.6104L6.7175 20.281L9.4197 17.2239C9.76598 16.8322 10.2637 16.6078 10.7865 16.6078H14.4189C15.4264 16.6078 16.2431 15.7911 16.2431 14.7836V8.94598C16.2431 7.93847 15.4264 7.12172 14.4189 7.12172H4.20304Z"
+                                        fill="#F5F8FF" />
+                                </svg>
+                            </div>
+                            <!--========-->
+                            <p class="text-xs lg:text-base lg:mt-12 sm:mt-10 mt-8 mb-1.5">Exclusive</p>
+                            <!--========-->
+                            <p class="text-[9px] sm:text-[10px] lg:text-sm opacity-90">All leads are 100% exclusive to your dealership</p>
+                        </div>
+                        <!--========-->
+                        <div class="text-white text-center hidden sm:block">
+                            <!--========-->
+                            <div class="flex items-center justify-center h-[50px] w-[50px] bg-[#1B47B8] rounded-xl shadow-3xl mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.56789 4.56756C4.56789 2.35104 6.36473 0.554199 8.58125 0.554199H18.7971C21.0136 0.554199 22.8104 2.35104 22.8104 4.56756V10.4052C22.8104 12.6217 21.0136 14.4185 18.7971 14.4185H18.0674C17.0599 14.4185 16.2431 13.6018 16.2431 12.5943V8.5288C16.2431 7.75158 15.6131 7.12152 14.8358 7.12152H7.12184C5.71133 7.12152 4.56789 5.97807 4.56789 4.56756ZM8.58125 2.7433C7.57374 2.7433 6.75699 3.56005 6.75699 4.56756C6.75699 4.76906 6.92034 4.93241 7.12184 4.93241H14.8358C16.8221 4.93241 18.4322 6.54257 18.4322 8.5288V12.2294H18.7971C19.8046 12.2294 20.6213 11.4127 20.6213 10.4052V4.56756C20.6213 3.56005 19.8046 2.7433 18.7971 2.7433H8.58125Z"
+                                        fill="#F5F8FF" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.189678 8.94598C0.189678 6.72946 1.98652 4.93262 4.20304 4.93262H14.4189C16.6354 4.93262 18.4322 6.72946 18.4322 8.94598V14.7836C18.4322 17.0001 16.6354 18.797 14.4189 18.797H10.951L7.61102 22.5755C6.43919 23.9012 4.25573 22.9499 4.42868 21.189L4.66361 18.797H4.20304C1.98652 18.797 0.189678 17.0001 0.189678 14.7836V8.94598ZM4.20304 7.12172C3.19553 7.12172 2.37878 7.93847 2.37878 8.94598V14.7836C2.37878 15.7911 3.19553 16.6078 4.20304 16.6078H5.06605C6.14403 16.6078 6.98693 17.5376 6.88157 18.6104L6.7175 20.281L9.4197 17.2239C9.76598 16.8322 10.2637 16.6078 10.7865 16.6078H14.4189C15.4264 16.6078 16.2431 15.7911 16.2431 14.7836V8.94598C16.2431 7.93847 15.4264 7.12172 14.4189 7.12172H4.20304Z"
+                                        fill="#F5F8FF" />
+                                </svg>
+                            </div>
+                            <!--========-->
+                            <p class="text-xs lg:text-base lg:mt-12 sm:mt-10 mt-8 mb-1.5">Exclusive</p>
+                            <!--========-->
+                            <p class="text-[9px] sm:text-[10px] lg:text-sm opacity-90">All leads are 100% exclusive to your dealership</p>
+                        </div>
+                        <!--========-->
+                        <div class="text-white text-center hidden sm:block">
+                            <!--========-->
+                            <div class="flex items-center justify-center h-[50px] w-[50px] bg-[#1B47B8] rounded-xl shadow-3xl mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="24" viewBox="0 0 23 24" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M4.56789 4.56756C4.56789 2.35104 6.36473 0.554199 8.58125 0.554199H18.7971C21.0136 0.554199 22.8104 2.35104 22.8104 4.56756V10.4052C22.8104 12.6217 21.0136 14.4185 18.7971 14.4185H18.0674C17.0599 14.4185 16.2431 13.6018 16.2431 12.5943V8.5288C16.2431 7.75158 15.6131 7.12152 14.8358 7.12152H7.12184C5.71133 7.12152 4.56789 5.97807 4.56789 4.56756ZM8.58125 2.7433C7.57374 2.7433 6.75699 3.56005 6.75699 4.56756C6.75699 4.76906 6.92034 4.93241 7.12184 4.93241H14.8358C16.8221 4.93241 18.4322 6.54257 18.4322 8.5288V12.2294H18.7971C19.8046 12.2294 20.6213 11.4127 20.6213 10.4052V4.56756C20.6213 3.56005 19.8046 2.7433 18.7971 2.7433H8.58125Z"
+                                        fill="#F5F8FF" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M0.189678 8.94598C0.189678 6.72946 1.98652 4.93262 4.20304 4.93262H14.4189C16.6354 4.93262 18.4322 6.72946 18.4322 8.94598V14.7836C18.4322 17.0001 16.6354 18.797 14.4189 18.797H10.951L7.61102 22.5755C6.43919 23.9012 4.25573 22.9499 4.42868 21.189L4.66361 18.797H4.20304C1.98652 18.797 0.189678 17.0001 0.189678 14.7836V8.94598ZM4.20304 7.12172C3.19553 7.12172 2.37878 7.93847 2.37878 8.94598V14.7836C2.37878 15.7911 3.19553 16.6078 4.20304 16.6078H5.06605C6.14403 16.6078 6.98693 17.5376 6.88157 18.6104L6.7175 20.281L9.4197 17.2239C9.76598 16.8322 10.2637 16.6078 10.7865 16.6078H14.4189C15.4264 16.6078 16.2431 15.7911 16.2431 14.7836V8.94598C16.2431 7.93847 15.4264 7.12172 14.4189 7.12172H4.20304Z"
+                                        fill="#F5F8FF" />
+                                </svg>
+                            </div>
+                            <!--========-->
+                            <p class="text-xs lg:text-base lg:mt-12 sm:mt-10 mt-8 mb-1.5">Exclusive</p>
+                            <!--========-->
+                            <p class="text-[9px] sm:text-[10px] lg:text-sm opacity-90">All leads are 100% exclusive to your dealership</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ==========section 005========== -->
+            <section class=" bg-[#1B47B8] hidden lg:block">
+                <!--========-->
+                <div class="xl:max-w-[1138px] lg:max-w-[1000px] mx-auto relative py-32 text-white">
+                    <!--====content====-->
+                    <div class=" flex lg:gap-24 gap-20 items-center justify-between md:px-10 px-0">
+                        <!--========-->
+                        <div>
+                            <!--========-->
+                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto"
+                                src="images/Home/com1.png" alt="//">
+                        </div>
+                        <!--========-->
+                        <div>
+                            <!--========-->
+                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto"
+                                src="images/Home/com2.png" alt="//">
+                        </div>
+                        <!--========-->
+                        <div>
+                            <!--========-->
+                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto"
+                                src="images/Home/com3.png" alt="//">
+                        </div>
+                        <!--========-->
+                        <div>
+                            <!--========-->
+                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto"
+                                src="images/Home/com4.png" alt="//">
+                        </div>
+                        <!--========-->
+                        <div>
+                            <!--========-->
+                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto"
+                                src="images/Home/com5.png" alt="//">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ==========section 006========== -->
+            <section>
+                <!--========-->
+                <div class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto md:py-28 py-10 flex items-center justify-center">
+                    <!--========-->
+                    <div>
+                        <img height="100%" width="100%" class="w-auto h-auto" src="images/Lead-genaration/b2.svg" alt="//">
+                    </div>
+                </div>
+            </section>
+            <!-- ==========section 006========== -->
+            <section>
+                <!--========-->
+                <div class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto grid md:grid-cols-5 grid-cols-1 pb-20 pt-10 items-center lg:gap-32 md:gap-10">
+                    <!--========-->
+                    <form class="md:col-span-3 space-y-7" action="#">
+                        <!--========-->
+                        <p class="text-xl sm:text-[28px] lg:text-4xl text-white">Send us a message</p>
+                        <!--========-->
+                        <div class=" grid grid-cols-2 gap-5">
+                            <!--========-->
+                            <input class="w-full md:h-14 h-7 px-6 p-3 text-slate-500 rounded-full border border-[#1B47B8] bg-transparent outline-none sm:text-sm text-[8px]" name="First-name" type="text" id="First-name" placeholder="First name" required>
+                            <!--========-->
+                            <input class="w-full md:h-14 h-7 px-6 p-3 text-slate-500 rounded-full border border-[#1B47B8] bg-transparent outline-none sm:text-sm text-[8px]" name="Last-name" type="text" id="Last-name" placeholder="Last name" required>
+                        </div>
+                        <!--========-->
+                        <div class=" grid grid-cols-2 gap-5">
+                            <!--========-->
+                            <input class="w-full md:h-14 h-7 px-6 p-3 text-slate-500 rounded-full border border-[#1B47B8] bg-transparent outline-none sm:text-sm text-[8px]" name="Phone" type="text" id="Phone" placeholder="Phone number (optional)">
+                            <!--========-->
+                            <input class="w-full md:h-14 h-7 px-6 p-3 text-slate-500 rounded-full border border-[#1B47B8] bg-transparent outline-none sm:text-sm text-[8px]" name="Website" type="text" id="Website" placeholder="Website (optional)">
+                        </div>
+                        <!--========-->
+                        <textarea  class="w-full md:h-64 h-48 px-6 p-3 text-slate-500 rounded-2xl border border-[#1B47B8] bg-transparent outline-none sm:text-sm text-[8px] resize-none" name="message" type="text" id="message" placeholder="What service do you provide?" required></textarea>
+                        <!--========-->
+                        <button type="submit" class="block md:mt-12 mt-5 outline-none lg:text-lg sm:text-xs text-[10px] text-white font-bold rounded-full bg-[#1B47B8] lg:w-64 sm:w-44 w-36 h-7 sm:h-9 lg:h-12 mr-0 ml-auto">Email</button>
+                    </form>
+                    <!--========-->
+                    <div class="md:col-span-2 xl:space-y-[103px] space-y-20 relative hidden md:block">
+                        <!--========-->
+                        <div class=" flex items-center">
+                            <!--========-->
+                            <div class="h-7 w-7 xl:w-[38px] xl:h-[38px] rounded-full bg-[#7095F2] text-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="sm:h-4 h-3 w-3 sm:w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <!--========-->
+                            <p class=" text-white text-sm sm:text-xl ml-6 font-mulish">Real-Time Leads</p>
+                        </div>
+                        <!--========-->
+                        <div class=" flex items-center">
+                            <!--========-->
+                            <div class="h-7 w-7 xl:w-[38px] xl:h-[38px] rounded-full bg-[#7095F2] text-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="sm:h-4 h-3 w-3 sm:w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <!--========-->
+                            <p class=" text-white text-sm sm:text-xl ml-6 font-mulish">Choose Your Geo</p>
+                        </div>
+                        <!--========-->
+                        <div class=" flex items-center">
+                            <!--========-->
+                            <div class="h-7 w-7 xl:w-[38px] xl:h-[38px] rounded-full bg-[#7095F2] text-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="sm:h-4 h-3 w-3 sm:w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <!--========-->
+                            <p class=" text-white text-sm sm:text-xl ml-6 font-mulish">No Fixed Commitments</p>
+                        </div>
+                        <!--========-->
+                        <div class=" flex items-center">
+                            <!--========-->
+                            <div class="h-7 w-7 xl:w-[38px] xl:h-[38px] rounded-full bg-[#7095F2] text-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="sm:h-4 h-3 w-3 sm:w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <!--========-->
+                            <p class=" text-white text-sm sm:text-xl ml-6 font-mulish whitespace-nowrap text-ellipsis  overflow-hidden">Start Receiving Leads Today</p>
+                        </div>
+                        <!--========-->
+                        <div class="absolute top-3.5 -left-3.5 mt-[0px!important] -z-10">
+                            <!--========-->
+                            <img height="100%" width="100%" class="h-auto w-auto md:max-h-[311px] xl:max-h-max" src="images/Lead-genaration/line.svg" alt="//">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--====================footer====================-->
+        <footer class="lg:bg-[#282828]">
+            <div class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto lg:pt-24 pt-10">
+                <!--====footer content====-->
+                <div class=" grid lg:grid-cols-4 grid-cols-2 gap-10 ">
+                    <!--========-->
+                    <div>
+                        <!--====logo====-->
+                        <a href="/"
+                            class="flex items-end font-josefinsans font-bold lg:text-3xl sm:text-xl text-base text-white space-x-3 leading-[2rem!important]">
+                            <!--========-->
+                            <img height="100%" width="100%" class=" w-7 h-7 lg:w-10 lg:h-10 object-cover" src="images/Logo/logo.png" alt="//">
+                            <!--========-->
+                            <span>Rekindle</span>
+                        </a>
+                        <!--====mobile dropdown====-->
+                        <div class=" mt-5 space-y-4 block lg:hidden">
+                            <!--========-->
+                            <ul @click.away="toggle=false" x-data="{toggle:false}" class="space-y-2">
+                                <!--========-->
+                                <li @click.prevent="toggle=!toggle" class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2 flex items-center cursor-pointer">
+                                    <span>For Customers</span>
+                                    <svg :class="{'rotate-180':toggle===true}"  xmlns="http://www.w3.org/2000/svg" class="transform h-4 w-4 ml-2"  viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </li>
+                                <!--========-->
+                                <ul x-show="toggle" class="space-y-2">
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-blue-50">
+                                        <a href="#">Find a Professional</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-blue-50">
+                                        <a href="#">how it works</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-blue-50">
+                                        <a href="#">Login</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <!--========-->
+                            <ul @click.away="toggle=false" x-data="{toggle:false}" class="space-y-2" class="space-y-2">
+                                <!--========-->
+                                <li @click.prevent="toggle=!toggle" class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2 flex items-center cursor-pointer">
+                                    <span>For Professional</span>
+                                    <svg :class="{'rotate-180':toggle===true}" xmlns="http://www.w3.org/2000/svg" class="transform h-4 w-4 ml-2"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </li>
+                                <!--========-->
+                                <ul x-show="toggle" class="space-y-2">
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">How it works</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">Pricing</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">join as a Professional</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">Help Centre</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">Mobile App</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <!--========-->
+                            <ul @click.away="toggle=false" x-data="{toggle:false}" class="space-y-2" class="space-y-2">
+                                <!--========-->
+                                <li @click.prevent="toggle=!toggle" class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2 flex items-center cursor-pointer">
+                                    <span>About</span>
+                                    <svg :class="{'rotate-180':toggle===true}" xmlns="http://www.w3.org/2000/svg" class="transform h-4 w-4 ml-2"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </li>
+                                <!--========-->
+                                <ul x-show="toggle" class="space-y-2">
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">About Rekindle Data</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">Team</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">Careers</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">Blog</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--========-->
+                    <div class=" col-span-2 hidden lg:grid grid-cols-3 gap-5">
+                        <!--========-->
+                        <ul class="space-y-2">
+                            <!--========-->
+                            <li class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2">For Customers</li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-blue-50">
+                                <a href="#">Find a Professional</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-blue-50">
+                                <a href="#">how it works</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-blue-50">
+                                <a href="#">Login</a>
+                            </li>
+                        </ul>
+                        <!--========-->
+                        <ul class="space-y-2">
+                            <!--========-->
+                            <li class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2">For Professional</li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">How it works</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">Pricing</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">join as a Professional</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">Help Centre</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">Mobile App</a>
+                            </li>
+                        </ul>
+                        <!--========-->
+                        <ul class="space-y-2">
+                            <!--========-->
+                            <li class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2">About</li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">About Rekindle Data</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">Team</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">Careers</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--========-->
+                    <div class=" text-white flex flex-col items-end">
+                        <!--========-->
+                        <div class=" text-right text-white">
+                            <!--========-->
+                            <p class="text-xs lg:text-[9px] font-mulish leading-tight">Team@bark.com</p>
+                            <!--========-->
+                            <p class="lg:text-base text-sm leading-tight">(604) 222-2221</p>
+                            <!--========-->
+                            <p class="text-xs lg:text-[9px] font-mulish text-[#7C7C7C] leading-tight">(open 24 hours 7 days a week)</p>
+                        </div>
+                        <!--========-->
+                        <div class=" mt-3 w-full sm:w-auto">
+                            <!--========-->
+                            <button class="relative flex items-center h-7 sm:w-44 w-full sm:text-xs text-[8px] tracking-[0.005em] text-blue-50 placeholder-blue-50 rounded-md px-3 p-2 bg-[#666666] outline-none">
+                                <!--========-->
+                                <img height="100%" width="100%" class="w-auto h-auto object-cover mr-2" src="images/icons/canada_flag.png" alt="//">
+                                <!--========-->
+                                <span>Canada</span>
+                                <!--========-->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+                        <!--========-->
+                        <form class="relative mt-5  w-full sm:w-auto" action="#">
+                            <!--========-->
+                            <label class="font-mulish sm:text-xs text-[8px] tracking-[0.005em] block mb-2" for="email">Subscribe Us</label>
+                            <!--========-->
+                            <input class="h-7 sm:w-44 w-full sm:text-xs text-[8px] tracking-[0.005em] text-blue-50 placeholder-blue-50 rounded-md px-3 p-2 bg-[#666666] outline-none" placeholder="Your email" name="email1" type="email" id="email1" required>
+                            <!--========-->
+                            <button type="submit" class="absolute right-0 bottom-0 outline-none h-7 w-7 rounded-md bg-blue-700 text-white flex items-center justify-center" aria-label="form submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </form>
+                        <!--========-->
+                        <div class="space-x-6 flex items-center justify-center mt-4 sm:w-3/4 w-full">
+                            <!--====insta====-->
+                            <a class=" text-white block lg:w-4 w-3 lg:h-4 h-3" aria-label="instagram"
+                                href="https://www.instagram.com/">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                                </svg>
+                            </a>
+                            <!--====fb====-->
+                            <a class=" text-white block lg:w-4 w-3 lg:h-4 h-3" aria-label="facebook"
+                                href="https://www.facebook.com/">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                </svg>
+                            </a>
+                            <!--====twi====-->
+                            <a class=" text-white block lg:w-4 w-3 lg:h-4 h-3" aria-label="Twitter" href="https://twitter.com/">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--====bottom====-->
+                <div>
+                    <p class="sm:pt-16 pt-6 pb-6 text-[8px] sm:text-[10px] lg:text-sm font-mulish text-[#A5A5A5] text-center">© 2022 Bark.com Global Limited. Terms & Conditions / Cookie policy / Privacy policy</p>
+                </div>
+            </div>
+        </footer>
+
+        <!---->
+        <script src="js/alpine.min.js" defer></script>
+    </body>
+</html>
