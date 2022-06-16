@@ -1,0 +1,641 @@
+<!doctype html>
+<html class=" overflow-x-hidden" lang="bn">
+    <!--====================head====================-->
+    <head>
+        <meta name="description" content="Rekindle Data">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#4285f4">
+        <meta property="og:image" content="images/logo/logo.png">
+        <meta property="og:image:type" content="image/jpg">
+        <meta property="og:image:width" content="1024">
+        <meta property="og:image:height" content="729">
+
+
+
+        <link rel="shortcut icon" href="images/logo/logo.png" type="image/x-icon">
+        <link rel="icon" href="images/logo/logo.png" type="image/x-icon">
+        <!--------->
+        <title>Website Audits || RekindleData</title>
+
+
+        <!-----Tailwind css---->
+        <link rel="stylesheet" href="output/tailwind.css">
+
+    </head>
+
+    <!--====================body====================-->
+    <body class=" bg-neutral-800 font-inter overflow-x-hidden">
+        <!-- ==========header========== -->
+        <header>
+            <!--========-->
+            <nav class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto flex items-center justify-between py-8">
+                <!--====logo====-->
+                <a href="/" class="flex sm:items-end items-start font-josefinsans font-bold sm:text-[34px] text-lg text-white space-x-3">
+                    <!--========-->
+                    <img height="100%" width="100%" class=" sm:w-10 w-5 h-5 sm:h-10 object-cover" src="images/Logo/logo.png" alt="//">
+                    <!--========-->
+                    <p>Rekindle</p>
+                </a>
+                <!--====menu====-->
+                <div class="hidden lg:flex items-center xl:space-x-12 space-x-7">
+                    <!--========-->
+                    <ul class=" flex text-white space-x-7 font-bold text-base">
+                        <!---->
+                        <li>
+                            <a href="lead-genaration.html">Lead Generation</a>
+                        </li>
+                        <!---->
+                        <li>
+                            <a href="website-audits.html">Website Audits</a>
+                        </li>
+                        <!---->
+                        <li>
+                            <a href="consulting.html">Consulting</a>
+                        </li>
+                        <!---->
+                        <li>
+                            <a class=" flex items-end" href="#">
+                                <span>Explore</span> 
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--========-->
+                    <button class=" outline-none text-sm text-white font-bold border rounded-full border-blue-800 px-12 py-2.5">Login</button>
+                </div>
+                <!--====Humberger menu====-->
+                <div @click.away="humberger=false" class=" block lg:hidden" x-data="{humberger: false}">
+                    <!--====menu button====-->
+                    <button @click.prevent="humberger=!humberger" aria-label="Mobile Menu button" class="outline-none text-white p-1">
+                        <!---->
+                        <svg x-show="humberger===false" xmlns="http://www.w3.org/2000/svg" class="sm:h-12 sm:w-12 w-6 h-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!---->
+                        <svg x-show="humberger===true" xmlns="http://www.w3.org/2000/svg" class="sm:h-12 sm:w-12 w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <!--====Mobile menu====-->
+                    <div :class="{'translate-x-0' : humberger, '-translate-x-full': !humberger  }"
+                        class="fixed lg:hidden w-3/5 transform transition-transform duration-700 ease-in-out z-50 bg-neutral-800 left-0 top-0 bottom-0 shadow-2xl">
+                        <!--====menu====-->
+                        <div class=" p-5">
+                            <!--====logo====-->
+                            <div class=" my-4">
+                                <!--====logo====-->
+                                <a href="/" class="flex sm:items-end items-start font-josefinsans font-bold sm:text-[34px] text-lg text-white space-x-3">
+                                    <!--========-->
+                                    <img height="100%" width="100%" class=" sm:w-10 w-5 h-5 sm:h-10 object-cover" src="images/Logo/logo.png" alt="//">
+                                    <!--========-->
+                                    <p>Rekindle</p>
+                                </a>
+                            </div>
+                            <!--========-->
+                            <ul class="space-y-4 flex flex-col items-start justify-center text-white font-bold sm:text-base text-xs mt-10">
+                                <!---->
+                                <li>
+                                    <a href="lead-genaration.html">Lead Generation</a>
+                                </li>
+                                <!---->
+                                <li>
+                                    <a href="website-audits.html">Website Audits</a>
+                                </li>
+                                <!---->
+                                <li>
+                                    <a href="consulting.html">Consulting</a>
+                                </li>
+                                <!---->
+                                <li>
+                                    <a class=" flex items-end" href="#">
+                                        <span>Explore</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="sm:h-6 sm:w-6 w-3 h-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!--====================main====================-->
+        <main>
+            <!-- ==========section 003========== -->
+            <section>
+                <!--========-->
+                <div class="xl:max-w-[1138px] lg:max-w-[1000px] mx-auto px-10 sm:px-0 text-blue-50 lg:relative  relative sm:pt-28 pt-14 pb-16 sm:pt-38 sm:pb-56 xl:pb-48 lg:pb-28 z-10">
+                    <!--========-->
+                    <div class=" md:max-w-[770px] sm:max-w-[640px] mx-auto lg:mx-0 relative">
+                        <!--========-->
+                        <h2 class="text-sm md:text-[26px] lg:text-[38px] font-semibold ">Automate lead generation</h2>
+                        <!--========-->
+                        <h1 class="text-[17px] md:text-4xl lg:text-[48px] font-semibold lg:mt-4">workflow at scale</h1>
+                        <!--========-->
+                        <p class="text-[6px] md:text-[10px] lg:text-lg lg:my-7 sm:my-5 my-3 opacity-90">Captain Data manages your most ambitious sales & marketing<br>
+                        workflows by extracting, enriching and automating data<br>
+                        from 30+ sources on the web.</p>
+                        <!--========-->
+                        <button class="outline-none md:text-sm text-[7px] text-white font-bold border rounded-full border-white md:px-12 px-6 py-1.5 md:py-3.5">Start
+                            free automation</button>
+                    </div>
+                    <!--========-->
+                    <div class="bg-white md:rounded-3xl sm:rounded-2xl rounded-xl shadow-5xl absolute right-0 xl:w-[590px] md:w-[430px] sm:w-[380px] w-[42%] xl:h-[439.13px] sm:h-[345.9px] h-[145.7px] p-5 top-0 bottom-0 my-auto">
+                        <!--========-->
+                        <div class="space-x-0.5 flex items-center">
+                            <!--========-->
+                            <div class=" md:h-3 md:w-3 w-2 h-2 rounded-full bg-black"></div>
+                            <!--========-->
+                            <div class=" md:h-3 md:w-3 w-2 h-2 rounded-full bg-black"></div>
+                            <!--========-->
+                            <div class=" md:h-3 md:w-3 w-2 h-2 rounded-full bg-black"></div>
+                        </div>
+                        <!--========-->
+                        <div class=" flex w-full h-full items-end justify-end xl:pr-10 sm:pr-5">
+                            <!--========-->
+                            <img height="100%" width="100%" class="xl:max-w-[209px] sm:max-w-[164.63px] max-w-[110.45px] w-auto h-auto xl:mb-[-215px] sm:mb-[-172px] mb-[-135px]" src="images/Website-audits/w1s.png" alt="//">
+                        </div>
+                    </div>
+                    <!--===scroll down=====-->
+                    <div class=" absolute lg:bottom-0 md:bottom-10 bottom-0 lg:left-[-70px] md:left-0">
+                        <div class="inline-flex items-center transform -rotate-90 w-auto">
+                            <!--========-->
+                            <div class="mr-1 xl:w-16 sm:w-10 w-6 h-[1px] bg-white"></div>
+                            <!--========-->
+                            <div class="sm:h-1 sm:w-1 w-0.5 h-0.5 mx-2 rounded-full bg-white"></div>
+                            <!--========-->
+                            <p class="xl:text-xs sm:text-[9px] text-[4px] tracking-[0.005em] text-white font-mulish">Scroll down</p>
+                        </div>
+                    </div>
+                </div>
+                <!--========-->
+                <div class="shadow-5xl xl:rounded-br-[170px] md:rounded-br-[133.908px] rounded-br-[74.5918px] bg-[#1B47B8] absolute left-0 xl:right-[48%] lg:right-[41%] md:right-[37%] sm:right-[46%] right-[28%] -z-50 top-0 xl:h-[790px] lg:h-[650px] sm:h-[680px] h-[400px]"></div>
+            </section>
+            <!-- ==========section 002========== -->
+            <section>
+                <!--========-->
+                <div class=" mt-20 xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] mx-auto px-10 sm:px-0 relative">
+                    <!--========-->
+                    <div>
+                        <!--========-->
+                        <img height="100%" width="100%" class="hidden xl:block w-full h-auto object-cover xl:pr-14" src="images/Website-audits/w3.svg" alt="//">
+                        <!--========-->
+                        <img height="100%" width="100%" class="xl:hidden md:block hidden w-full h-auto object-cover md:pr-24" src="images/Website-audits/w3lg.svg" alt="//">
+                        <!--========-->
+                        <img height="100%" width="100%" class="md:hidden block w-full h-auto object-contain" src="images/Website-audits/w3m.svg" alt="//">
+                    </div>
+                    <!--========-->
+                    <div class="whitespace-nowrap absolute xl:top-[18%] lg:top-[17%] sm:top-[14%] top-[14%] left-[65%] xl:left-[70%] sm:right-0 z-10">
+                        <!--========-->
+                        <h1 class=" text-xs sm:text-2xl md:text-3xl lg:text-4xl text-white font-semibold mb-3 sm:mb-7 lg:mb-9">The ultimate<br> automatoon tool for<br> ambitious teams</h1>
+                        <!--========-->
+                        <p class="text-[7px] sm:text-base lg:text-xl text-[#64748B]">Are your tools preventing you from<br> scaling your sales and<br> marketing ops, creating silos?</p>
+                    </div>
+                    <!--===scroll down=====-->
+                    <div class=" md:flex hidden absolute md:-top-20 bottom-0 my-auto -right-12">
+                        <div class="inline-flex items-center transform -rotate-90 w-auto">
+                            <!--========-->
+                            <div class="mr-1 lg:w-16 sm:w-10 w-6 h-[1px] bg-blue-700"></div>
+                            <!--========-->
+                            <div class="sm:h-1 sm:w-1 w-0.5 h-0.5 mx-2 rounded-full bg-white"></div>
+                            <!--========-->
+                            <p class="lg:text-xs sm:text-[9px] text-[4px] tracking-[0.005em] text-white font-mulish">Scroll down</p>
+                        </div>
+                    </div>
+                    <!--====social====-->
+                    <div class="sm:space-y-7 space-y-3 md:block hidden absolute right-0 lg:-top-28 top-0  z-20">
+                        <!--====insta====-->
+                        <a class=" text-white block lg:w-5 sm:w-4 w-2 lg:h-5 sm:h-4 h-2" aria-label="instagram"
+                            href="https://www.instagram.com/">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                            </svg>
+                        </a>
+                        <!--====fb====-->
+                        <a class=" text-white block lg:w-5 sm:w-4 w-2 lg:h-5 sm:h-4 h-2" aria-label="facebook"
+                            href="https://www.facebook.com/">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                            </svg>
+                        </a>
+                        <!--====twi====-->
+                        <a class=" text-white block lg:w-5 sm:w-4 w-2 lg:h-5 sm:h-4 h-2" aria-label="Twitter" href="https://twitter.com/">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <!--========-->
+                    <div>
+                        <!--========-->
+                        <img height="100%" width="100%" class="h-auto xl:w-[220px] w-1/4 absolute xl:top-[-175px] sm:top-[-209px] top-[-143px] xl:left-[318px] sm:left-[31%] left-[36%] z-30" src="images/icons/d-arrow-dot.svg" alt="//">
+                    </div>
+                </div>
+            </section>
+            <!-- ==========section 003========== -->
+            <section class=" bg-[#1B47B8] mb-[130px] sm:mb-[360px] md:mb-auto">
+                <!--========-->
+                <div class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] mx-auto px-10 sm:px-0 sm:py-20 py-16 text-white flex md:flex-row flex-col md:gap-32 gap-10 relative">
+                    <!--========-->
+                    <div class="xl:w-[36%] md:w-[41%] xl:py-10">
+                        <!--========-->
+                        <h1 class=" lg:text-4xl text-[26px] font-bold lg:leading-[46.8px] text-shadow-3xl">How much is tech debt<br> costing you?</h1>
+                        <!--========-->
+                        <p class=" text-sm lg:text-xl lg:mt-6 mt-4 mb-11 opacity-80 w-4/5 md:w-full">Engineers spend ~33% of their time dealing with tech debt. Find out how  much it’s costing you with our tech debt calculator.</p>
+                        <!--========-->
+                        <img height="100%" width="100%" class="w-auto h-auto mx-auto" src="images/Website-audits/w2.png" alt="//">
+                    </div>
+                    <!--========-->
+                    <div class="bg-white md:rounded-3xl sm:rounded-2xl rounded-xl shadow-5xl md:absolute top-0 bottom-0 right-0 xl:w-[618px] sm:w-[447px] xl:h-[529px] sm:h-[382px] w-full h-[200px] my-auto mx-auto p-5 mb-[-215px] sm:mb-[-390px] md:mb-auto">
+                        <!--========-->
+                        <div class="space-x-0.5 flex items-center">
+                            <!--========-->
+                            <div class=" md:h-3 md:w-3 w-2 h-2 rounded-full bg-black"></div>
+                            <!--========-->
+                            <div class=" md:h-3 md:w-3 w-2 h-2 rounded-full bg-black"></div>
+                            <!--========-->
+                            <div class=" md:h-3 md:w-3 w-2 h-2 rounded-full bg-black"></div>
+                        </div>
+                        <!--========-->
+                        <div class="md:p-10 p-4 flex flex-col h-full items-center justify-between">
+                            <!--========-->
+                            <div class=" w-full h-1 sm:h-1.5 lg:h-2 bg-[#262626] shadow-3xl rounded-full relative">
+                                <!--========-->
+                                <div class=" w-1/4 h-1 sm:h-1.5 lg:h-2 rounded-l-full bg-gradient-to-br from-[#6505B4] via-[#4303FA] to-[#0047FF]">
+                                </div>
+                            </div>
+                            <!--========-->
+                            <button class="mx-auto outline-none sm:text-sm text-[7px] text-white font-semibold rounded-full sm:px-12 px-8 py-1.5 sm:py-2.5 tracking-[0.0025em] bg-[#1B47B8] font-mulish">Calculate
+                                your cost</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ==========section 004========== -->
+            <section>
+                <!--========-->
+                <div class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] mx-auto px-10 sm:px-0 py-20 grid xl:grid-cols-5 sm:grid-cols-3 grid-cols-2 items-center md:gap-10 gap-2.5">
+                    <!--========-->
+                    <div class="xl:col-span-2 sm:col-span-1">
+                        <!--========-->
+                        <img height="100%" width="100%" class="w-auto h-auto mx-auto" src="images/Website-audits/w1.png" alt="//">
+                    </div>
+                    <!--========-->
+                    <div class="xl:col-span-3 sm:col-span-2 text-white">
+                        <!--========-->
+                        <h1 class="xl:text-4xl md:text-3xl text-base">Ready to scale your automations?</h1>
+                        <!--========--> 
+                        <p  class="xl:text-xl md:text-lg text-[9px] md:mt-5 mt-1 font-light md:pb-9 pb-5">Try Captain Data today and unlock your full potential.<br class="hidden md:block">
+                        You are a few clicks away from a whole new automation world.</p>
+                        <!--========-->
+                        <ul class=" md:space-y-3.5 space-y-1">
+                            <!--========-->
+                            <li class=" flex items-center space-x-3.5 xl:text-base md:text-sm text-[7px]">
+                                <!--========-->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 md:h-5 xl:h-6 w-3 md:w-5 xl:w-6" viewBox="0 0 25 25" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8301 23.8995V12.8428L24.0472 7.31445V18.3711L12.8301 23.8995Z"
+                                        fill="#1E3A8A" stroke="#1D4ED8" stroke-width="0.134604" stroke-linejoin="round" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8303 23.8995L1.61328 18.3711V7.31445L12.8303 12.8428V23.8995Z"
+                                        fill="#1D4ED8" stroke="#1D4ED8" stroke-width="0.134604" stroke-linejoin="round" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M1.61328 7.31453L12.8303 1.78613L24.0474 7.31453L12.8303 12.8429L1.61328 7.31453Z" fill="#3B82F6"
+                                        stroke="#1D4ED8" stroke-width="0.134604" stroke-linejoin="round" />
+                                </svg>
+                                <!--========-->
+                                <p>No credit card required</p>
+                            </li>
+                            <!--========-->
+                            <li class=" flex items-center space-x-3.5 xl:text-base md:text-sm text-[7px]">
+                                <!--========-->
+                                <svg xmlns="http://www.w3.org/2000/svg"  class="h-3 md:h-5 xl:h-6 w-3 md:w-5 xl:w-6" viewBox="0 0 25 25" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8301 23.8995V12.8428L24.0472 7.31445V18.3711L12.8301 23.8995Z"
+                                        fill="#1E3A8A" stroke="#1D4ED8" stroke-width="0.134604" stroke-linejoin="round" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8303 23.8995L1.61328 18.3711V7.31445L12.8303 12.8428V23.8995Z"
+                                        fill="#1D4ED8" stroke="#1D4ED8" stroke-width="0.134604" stroke-linejoin="round" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M1.61328 7.31453L12.8303 1.78613L24.0474 7.31453L12.8303 12.8429L1.61328 7.31453Z" fill="#3B82F6"
+                                        stroke="#1D4ED8" stroke-width="0.134604" stroke-linejoin="round" />
+                                </svg>
+                                <!--========-->
+                                <p>14 days free trial with no commitment</p>
+                            </li>
+                        </ul>
+                        <!--========-->
+                        <button class="md:mt-14 mt-5 outline-none sm:text-sm text-[7px] text-white font-bold border rounded-full border-white sm:px-12 px-8 py-1.5 sm:py-2.5">Start free automation</button>
+                    </div>
+                </div>
+            </section>
+            <!-- ==========section 005========== -->
+            <section class=" bg-[#1B47B8]">
+                <!--========-->
+                <div class="xl:max-w-[1138px] lg:max-w-[1000px] mx-auto relative xl:py-32 sm:py-20 py-16 text-white">
+                    <!--====content====-->
+                    <div class=" flex lg:gap-24 gap-20 items-center justify-between md:px-10 px-0 lg:static absolute sm:-left-24 sm:-right-24 -left-52 -right-52 top-0 bottom-0 my-auto">
+                        <!--========-->
+                        <div>
+                            <!--========-->
+                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto"
+                                src="images/Home/com1.png" alt="//">
+                        </div>
+                        <!--========-->
+                        <div>
+                            <!--========-->
+                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto"
+                                src="images/Home/com2.png" alt="//">
+                        </div>
+                        <!--========-->
+                        <div>
+                            <!--========-->
+                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto"
+                                src="images/Home/com3.png" alt="//">
+                        </div>
+                        <!--========-->
+                        <div>
+                            <!--========-->
+                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto"
+                                src="images/Home/com4.png" alt="//">
+                        </div>
+                        <!--========-->
+                        <div>
+                            <!--========-->
+                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto"
+                                src="images/Home/com5.png" alt="//">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!--====================footer====================-->
+        <footer class="lg:bg-[#282828]">
+            <div class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto lg:pt-24 pt-10">
+                <!--====footer content====-->
+                <div class=" grid lg:grid-cols-4 grid-cols-2 gap-10 ">
+                    <!--========-->
+                    <div>
+                        <!--====logo====-->
+                        <a href="/"
+                            class="flex items-end font-josefinsans font-bold lg:text-3xl sm:text-xl text-base text-white space-x-3 leading-[2rem!important]">
+                            <!--========-->
+                            <img height="100%" width="100%" class=" w-7 h-7 lg:w-10 lg:h-10 object-cover" src="images/Logo/logo.png" alt="//">
+                            <!--========-->
+                            <span>Rekindle</span>
+                        </a>
+                        <!--====mobile dropdown====-->
+                        <div class=" mt-5 space-y-4 block lg:hidden">
+                            <!--========-->
+                            <ul @click.away="toggle=false" x-data="{toggle:false}" class="space-y-2">
+                                <!--========-->
+                                <li @click.prevent="toggle=!toggle" class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2 flex items-center cursor-pointer">
+                                    <span>For Customers</span>
+                                    <svg :class="{'rotate-180':toggle===true}"  xmlns="http://www.w3.org/2000/svg" class="transform h-4 w-4 ml-2"  viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </li>
+                                <!--========-->
+                                <ul x-show="toggle" class="space-y-2">
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-blue-50">
+                                        <a href="#">Find a Professional</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-blue-50">
+                                        <a href="#">how it works</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-blue-50">
+                                        <a href="#">Login</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <!--========-->
+                            <ul @click.away="toggle=false" x-data="{toggle:false}" class="space-y-2" class="space-y-2">
+                                <!--========-->
+                                <li @click.prevent="toggle=!toggle" class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2 flex items-center cursor-pointer">
+                                    <span>For Professional</span>
+                                    <svg :class="{'rotate-180':toggle===true}" xmlns="http://www.w3.org/2000/svg" class="transform h-4 w-4 ml-2"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </li>
+                                <!--========-->
+                                <ul x-show="toggle" class="space-y-2">
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">How it works</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">Pricing</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">join as a Professional</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">Help Centre</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">Mobile App</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                            <!--========-->
+                            <ul @click.away="toggle=false" x-data="{toggle:false}" class="space-y-2" class="space-y-2">
+                                <!--========-->
+                                <li @click.prevent="toggle=!toggle" class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2 flex items-center cursor-pointer">
+                                    <span>About</span>
+                                    <svg :class="{'rotate-180':toggle===true}" xmlns="http://www.w3.org/2000/svg" class="transform h-4 w-4 ml-2"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                </li>
+                                <!--========-->
+                                <ul x-show="toggle" class="space-y-2">
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">About Rekindle Data</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">Team</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">Careers</a>
+                                    </li>
+                                    <!--========-->
+                                    <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                        <a href="#">Blog</a>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--========-->
+                    <div class=" col-span-2 hidden lg:grid grid-cols-3 gap-5">
+                        <!--========-->
+                        <ul class="space-y-2">
+                            <!--========-->
+                            <li class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2">For Customers</li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-blue-50">
+                                <a href="#">Find a Professional</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-blue-50">
+                                <a href="#">how it works</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-blue-50">
+                                <a href="#">Login</a>
+                            </li>
+                        </ul>
+                        <!--========-->
+                        <ul class="space-y-2">
+                            <!--========-->
+                            <li class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2">For Professional</li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">How it works</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">Pricing</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">join as a Professional</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">Help Centre</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">Mobile App</a>
+                            </li>
+                        </ul>
+                        <!--========-->
+                        <ul class="space-y-2">
+                            <!--========-->
+                            <li class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2">About</li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">About Rekindle Data</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">Team</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">Careers</a>
+                            </li>
+                            <!--========-->
+                            <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
+                                <a href="#">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--========-->
+                    <div class=" text-white flex flex-col items-end">
+                        <!--========-->
+                        <div class=" text-right text-white">
+                            <!--========-->
+                            <p class="text-xs lg:text-[9px] font-mulish leading-tight">Team@bark.com</p>
+                            <!--========-->
+                            <p class="lg:text-base text-sm leading-tight">(604) 222-2221</p>
+                            <!--========-->
+                            <p class="text-xs lg:text-[9px] font-mulish text-[#7C7C7C] leading-tight">(open 24 hours 7 days a week)</p>
+                        </div>
+                        <!--========-->
+                        <div class=" mt-3 w-full sm:w-auto">
+                            <!--========-->
+                            <button class="relative flex items-center h-7 sm:w-44 w-full sm:text-xs text-[8px] tracking-[0.005em] text-blue-50 placeholder-blue-50 rounded-md px-3 p-2 bg-[#666666] outline-none">
+                                <!--========-->
+                                <img height="100%" width="100%" class="w-auto h-auto object-cover mr-2" src="images/icons/canada_flag.png" alt="//">
+                                <!--========-->
+                                <span>Canada</span>
+                                <!--========-->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-2 h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </div>
+                        <!--========-->
+                        <form class="relative mt-5  w-full sm:w-auto" action="#">
+                            <!--========-->
+                            <label class="font-mulish sm:text-xs text-[8px] tracking-[0.005em] block mb-2" for="email">Subscribe Us</label>
+                            <!--========-->
+                            <input class="h-7 sm:w-44 w-full sm:text-xs text-[8px] tracking-[0.005em] text-blue-50 placeholder-blue-50 rounded-md px-3 p-2 bg-[#666666] outline-none" placeholder="Your email" name="email1" type="email" id="email1" required>
+                            <!--========-->
+                            <button type="submit" class="absolute right-0 bottom-0 outline-none h-7 w-7 rounded-md bg-blue-700 text-white flex items-center justify-center" aria-label="form submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </form>
+                        <!--========-->
+                        <div class="space-x-6 flex items-center justify-center mt-4 sm:w-3/4 w-full">
+                            <!--====insta====-->
+                            <a class=" text-white block lg:w-4 w-3 lg:h-4 h-3" aria-label="instagram"
+                                href="https://www.instagram.com/">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                                </svg>
+                            </a>
+                            <!--====fb====-->
+                            <a class=" text-white block lg:w-4 w-3 lg:h-4 h-3" aria-label="facebook"
+                                href="https://www.facebook.com/">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                </svg>
+                            </a>
+                            <!--====twi====-->
+                            <a class=" text-white block lg:w-4 w-3 lg:h-4 h-3" aria-label="Twitter" href="https://twitter.com/">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                    <path
+                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--====bottom====-->
+                <div>
+                    <p class="sm:pt-16 pt-6 pb-6 text-[8px] sm:text-[10px] lg:text-sm font-mulish text-[#A5A5A5] text-center">© 2022 Bark.com Global Limited. Terms & Conditions / Cookie policy / Privacy policy</p>
+                </div>
+            </div>
+        </footer>
+
+        <!---->
+        <script src="js/alpine.min.js" defer></script>
+    </body>
+</html>
