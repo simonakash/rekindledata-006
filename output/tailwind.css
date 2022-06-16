@@ -1418,6 +1418,18 @@ video {
   min-height: 210px;
 }
 
+.min-h-\[500px\]{
+  min-height: 500px;
+}
+
+.min-h-\[50px\]{
+  min-height: 50px;
+}
+
+.min-h-\[550px\]{
+  min-height: 550px;
+}
+
 .w-5{
   width: 1.25rem;
 }
