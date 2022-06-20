@@ -17,8 +17,38 @@
         <title>Consulting || RekindleData</title>
 
 
+        <!-----Swiper Js css---->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css" />
         <!-----Tailwind css---->
         <link rel="stylesheet" href="output/tailwind.css">
+
+        <style>
+            #mySwiper4 .swiper-slide-active {
+               box-shadow: 0px 0px 38.7547px rgba(0, 0, 0, 0.25);
+            }
+            #mySwiper4 .swiper-pagination2 .swiper-pagination-bullet {
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background-color: white;
+                opacity:0.2;
+            }
+            #mySwiper4 .swiper-pagination2 .swiper-pagination-bullet-active {
+                background-color: white;
+                 opacity:1;
+            }
+            .swiper-button-prev, .swiper-button-next {
+                width: 122%;
+                top: auto;
+                bottom: -12px;
+                right: 10px;
+                transform: rotate(180deg);
+            }
+            .swiper-button-prev::after, .swiper-button-next::after {
+                font-size: 18px;
+                color: white;
+            }
+        </style>
 
     </head>
 
@@ -27,13 +57,16 @@
         <!-- ==========header========== -->
         <header>
             <!--========-->
-            <nav class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto flex items-center justify-between py-8 z-50">
+            <nav
+                class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto flex items-center justify-between py-8 z-50">
                 <!--====logo====-->
-                <a href="/" class="flex sm:items-end items-start font-josefinsans font-bold sm:text-[34px] text-lg text-white space-x-3">
+                <a href="/"
+                    class="flex sm:items-end items-start font-josefinsans font-bold sm:text-[34px] text-lg text-white space-x-3 whitespace-nowrap">
                     <!--========-->
-                    <img height="100%" width="100%" class=" sm:w-10 w-5 h-5 sm:h-10 object-cover" src="images/Logo/logo.png" alt="//">
+                    <img height="100%" width="100%" class=" sm:w-10 w-5 h-5 sm:h-10 object-cover" src="images/Logo/logo.png"
+                        alt="//">
                     <!--========-->
-                    <p>Rekindle</p>
+                    <p>Rekindle Data</p>
                 </a>
                 <!--====menu====-->
                 <div class="hidden lg:flex items-center xl:space-x-12 space-x-7">
@@ -41,32 +74,35 @@
                     <ul class=" flex text-white space-x-7 font-bold text-base">
                         <!---->
                         <li>
-                            <a href="lead-genaration.html">Lead Generation</a>
+                            <a class="hover:underline" href="lead-genaration.html">Lead Generation</a>
                         </li>
                         <!---->
                         <li>
-                            <a href="website-audits.html">Website Audits</a>
+                            <a class="hover:underline" href="website-audits.html">Website Audits</a>
                         </li>
                         <!---->
                         <li>
-                            <a href="consulting.html">Consulting</a>
+                            <a class="hover:underline" href="consulting.html">Consulting</a>
                         </li>
                         <!---->
-                        <li @click.away="dropdown=false"  x-data="{dropdown:false}" class=" relative">
+                        <li @click.away="dropdown=false" x-data="{dropdown:false}" class=" relative">
                             <!---->
-                            <a  @click.prevent="dropdown=!dropdown" class=" flex items-end" href="#">
-                                <span>Explore</span> 
+                            <a @click.prevent="dropdown=!dropdown" class=" flex items-end" href="#">
+                                <span>Explore</span>
                                 <svg :class="{'-rotate-180' : dropdown===true}" xmlns="http://www.w3.org/2000/svg"
-                                    class=" transform duration-500 sm:h-6 sm:w-6 w-3 h-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    class=" transform duration-500 sm:h-6 sm:w-6 w-3 h-3 ml-1" viewBox="0 0 20 20"
+                                    fill="currentColor">
                                     <path fill-rule="evenodd"
                                         d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                                         clip-rule="evenodd" />
                                 </svg>
                             </a>
                             <!---->
-                            <div x-ref="container1" x-bind:style="dropdown == true ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"  class="absolute left-0 -right-44 top-10 overflow-hidden whitespace-nowrapx ml-2 mt-2 transition-all max-h-0 duration-700 bg-neutral-800  rounded-md shadow-4xl text-xs z-50">
+                            <div x-ref="container1"
+                                x-bind:style="dropdown == true ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                                class="absolute left-0 -right-44 top-10 overflow-hidden whitespace-nowrapx ml-2 mt-2 transition-all max-h-0 duration-700 bg-neutral-800  rounded-md shadow-4xl text-xs z-50">
                                 <!---->
-                                <div class=" flex items-center justify-between p-5"> 
+                                <div class=" flex items-center justify-between p-5">
                                     <!---->
                                     <p class=" text-sm">Services</p>
                                     <!---->
@@ -77,52 +113,54 @@
                                     <!---->
                                     <li>
                                         <!---->
-                                        <a href="#">Business</a>
+                                        <a class="hover:underline" href="#">Business</a>
                                     </li>
                                     <!---->
                                     <li>
                                         <!---->
-                                        <a href="#">Events & Entertainers</a>
+                                        <a class="hover:underline" href="#">Events & Entertainers</a>
                                     </li>
                                     <!---->
                                     <li>
                                         <!---->
-                                        <a href="#">House & Home</a>
+                                        <a class="hover:underline" href="#">House & Home</a>
                                     </li>
                                     <!---->
                                     <li>
                                         <!---->
-                                        <a href="#">Business</a>
+                                        <a class="hover:underline" href="#">Business</a>
                                     </li>
                                     <!---->
                                     <li>
                                         <!---->
-                                        <a href="#">Events & Entertainers</a>
+                                        <a class="hover:underline" href="#">Events & Entertainers</a>
                                     </li>
                                     <!---->
                                     <li>
                                         <!---->
-                                        <a href="#">House & Home</a>
+                                        <a class="hover:underline" href="#">House & Home</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                     </ul>
                     <!--========-->
-                    <button class=" outline-none text-sm text-white font-bold border rounded-full border-blue-800 px-12 py-2.5">Login</button>
+                    <button
+                        class=" outline-none text-sm text-white font-bold border rounded-full border-blue-800 px-12 py-2.5">Login</button>
                 </div>
                 <!--====Humberger menu====-->
                 <div @click.away="humberger=false" class=" block lg:hidden" x-data="{humberger: false}">
                     <!--====menu button====-->
-                    <button @click.prevent="humberger=!humberger" aria-label="Mobile Menu button" class="outline-none text-white p-1">
+                    <button @click.prevent="humberger=!humberger" aria-label="Mobile Menu button"
+                        class="outline-none text-white p-1">
                         <!---->
-                        <svg x-show="humberger===false" xmlns="http://www.w3.org/2000/svg" class="sm:h-12 sm:w-12 w-6 h-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
+                        <svg x-show="humberger===false" xmlns="http://www.w3.org/2000/svg" class="sm:h-12 sm:w-12 w-6 h-6"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                         <!---->
-                        <svg x-show="humberger===true" xmlns="http://www.w3.org/2000/svg" class="sm:h-12 sm:w-12 w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="2">
+                        <svg x-show="humberger===true" xmlns="http://www.w3.org/2000/svg" class="sm:h-12 sm:w-12 w-6 h-6"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
@@ -134,69 +172,76 @@
                             <!--====logo====-->
                             <div class=" my-4">
                                 <!--====logo====-->
-                                <a href="/" class="flex sm:items-end items-start font-josefinsans font-bold sm:text-[34px] text-lg text-white space-x-3">
+                                <a href="/"
+                                    class="flex sm:items-end items-start font-josefinsans font-bold sm:text-[34px] text-lg text-white space-x-3">
                                     <!--========-->
-                                    <img height="100%" width="100%" class=" sm:w-10 w-5 h-5 sm:h-10 object-cover" src="images/Logo/logo.png" alt="//">
+                                    <img height="100%" width="100%" class=" sm:w-10 w-5 h-5 sm:h-10 object-cover"
+                                        src="images/Logo/logo.png" alt="//">
                                     <!--========-->
                                     <p>Rekindle</p>
                                 </a>
                             </div>
                             <!--========-->
-                            <ul class="space-y-4 flex flex-col items-start justify-center text-white font-bold sm:text-base text-xs mt-10">
+                            <ul
+                                class="space-y-4 flex flex-col items-start justify-center text-white font-bold sm:text-base text-xs mt-10">
                                 <!---->
                                 <li>
-                                    <a href="lead-genaration.html">Lead Generation</a>
+                                    <a class="hover:underline" href="lead-genaration.html">Lead Generation</a>
                                 </li>
                                 <!---->
                                 <li>
-                                    <a href="website-audits.html">Website Audits</a>
+                                    <a class="hover:underline" href="website-audits.html">Website Audits</a>
                                 </li>
                                 <!---->
                                 <li>
-                                    <a href="consulting.html">Consulting</a>
+                                    <a class="hover:underline" href="consulting.html">Consulting</a>
                                 </li>
                                 <!---->
-                                <li  x-data="{dropdown:false}" class=" relative">
+                                <li x-data="{dropdown:false}" class=" relative">
                                     <!---->
                                     <a @click.prevent="dropdown=!dropdown" class=" flex items-end" href="#">
                                         <span>Explore</span>
-                                        <svg :class="{'-rotate-180' : dropdown===true}" xmlns="http://www.w3.org/2000/svg" class=" transform duration-500 sm:h-6 sm:w-6 w-3 h-3 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                        <svg :class="{'-rotate-180' : dropdown===true}" xmlns="http://www.w3.org/2000/svg"
+                                            class=" transform duration-500 sm:h-6 sm:w-6 w-3 h-3 ml-1" viewBox="0 0 20 20"
+                                            fill="currentColor">
                                             <path fill-rule="evenodd"
                                                 d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                                                 clip-rule="evenodd" />
                                         </svg>
                                     </a>
                                     <!---->
-                                    <ul x-ref="container1" x-bind:style="dropdown == true ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''" class="space-y-4 ml-2 mt-2 relative overflow-hidden transition-all max-h-0 duration-700 list-disc list-inside">
+                                    <ul x-ref="container1"
+                                        x-bind:style="dropdown == true ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                                        class="space-y-4 ml-2 mt-2 relative overflow-hidden transition-all max-h-0 duration-700 list-disc list-inside">
                                         <!---->
                                         <li>
                                             <!---->
-                                            <a href="#">Business</a>
+                                            <a class="hover:underline" href="#">Business</a>
                                         </li>
                                         <!---->
                                         <li>
                                             <!---->
-                                            <a href="#">Events & Entertainers</a>
+                                            <a class="hover:underline" href="#">Events & Entertainers</a>
                                         </li>
                                         <!---->
                                         <li>
                                             <!---->
-                                            <a href="#">House & Home</a>
+                                            <a class="hover:underline" href="#">House & Home</a>
                                         </li>
                                         <!---->
                                         <li>
                                             <!---->
-                                            <a href="#">Business</a>
+                                            <a class="hover:underline" href="#">Business</a>
                                         </li>
                                         <!---->
                                         <li>
                                             <!---->
-                                            <a href="#">Events & Entertainers</a>
+                                            <a class="hover:underline" href="#">Events & Entertainers</a>
                                         </li>
                                         <!---->
                                         <li>
                                             <!---->
-                                            <a href="#">House & Home</a>
+                                            <a class="hover:underline" href="#">House & Home</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -444,224 +489,15 @@
             <!-- ==========section 003========== -->
             <section>
                 <!--========-->
-                <div class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto text-white lg:py-16 py-10 relative my-20">
+                <div class="max-w-[1500px] mx-auto text-white lg:py-16 py-10 relative my-20">
                     <!--====slider====-->
-                    <div>
+                    <div id="mySwiper4" class="swiper select-none">
                         <!--========-->
-                        <div class=" flex items-center justify-center">
+                        <div class="swiper-wrapper">
                             <!--========-->
-                            <div
-                                class="absolute left-0 right-0 transform -translate-x-20 md:-translate-x-40 lg:-translate-x-52 xl:translate-x-72 xl:w-3/4 md:w-3/5 w-10/12 min-w-[200px] md:min-w-[500px] mx-auto bg-blue-800 rounded-[20px] md:p-6 p-4 shadow-5xl z-10">
+                            <div class="swiper-slide mx-auto bg-blue-800 rounded-[20px] md:p-6 p-4 z-30">
                                 <!--========-->
-                                <div class=" flex items-center space-x-1">
-                                    <!--========-->
-                                    <div class="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-6 lg:h-6 bg-[#0B2158] rounded-full"></div>
-                                    <!--========-->
-                                    <div class="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-6 lg:h-6 bg-[#3A5EB8] rounded-full"></div>
-                                    <!--========-->
-                                    <div class="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-6 lg:h-6 bg-white rounded-full"></div>
-                                </div>
-                                <!--========-->
-                                <div class="md:p-11 sm:p-5 py-4 text-white">
-                                    <!--========-->
-                                    <div>
-                                        <!--========-->
-                                        <h1 class=" font-bold lg:text-2xl md:text-lg text-base md:mb-6 mb-3">ML-Based Anti-Money Laundering Tool
-                                            for Digital Assets Firm</h1>
-                                        <!--========-->
-                                        <p class="lg:text-lg md:text-sm text-xs opacity-90">“Their ML skills were top-notch.”</p>
-                                    </div>
-                                    <!--========-->
-                                    <div class=" flex items-center md:my-4 my-3">
-                                        <!--========-->
-                                        <p class="md:text-3xl text-lg mr-3.5">5.0</p>
-                                        <!--========-->
-                                        <div class=" flex items-center space-x-2 text-[#F97316]">
-                                            <!--========-->
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 w-4 h-4" viewBox="0 0 20 20"
-                                                fill="currentColor">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                        </div>
-                                        <!--========-->
-                                        <div class=" flex items-center space-x-2 text-[#F97316]">
-                                            <!--========-->
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 w-4 h-4" viewBox="0 0 20 20"
-                                                fill="currentColor">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                        </div>
-                                        <!--========-->
-                                        <div class=" flex items-center space-x-2 text-[#F97316]">
-                                            <!--========-->
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 w-4 h-4" viewBox="0 0 20 20"
-                                                fill="currentColor">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                        </div>
-                                        <!--========-->
-                                        <div class=" flex items-center space-x-2 text-[#F97316]">
-                                            <!--========-->
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 w-4 h-4" viewBox="0 0 20 20"
-                                                fill="currentColor">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                        </div>
-                                        <!--========-->
-                                        <div class=" flex items-center space-x-2 text-[#F97316]">
-                                            <!--========-->
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 w-4 h-4" viewBox="0 0 20 20"
-                                                fill="currentColor">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <!--========-->
-                                    <div class=" space-y-2">
-                                        <!--========-->
-                                        <div class=" flex items-center">
-                                            <!--========-->
-                                            <div class="w-2 h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-white rounded-full mr-3.5 md:mr-5"></div>
-                                            <!--========-->
-                                            <div class=" sm:w-2/5 w-full h-1 sm:h-1.5 lg:h-2 bg-white shadow-3xl rounded-full relative">
-                                                <!--========-->
-                                                <div class=" w-1/3 h-1 sm:h-1.5 lg:h-2 rounded-l-full bg-[#0B2158]">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--========-->
-                                        <div class=" flex items-center">
-                                            <!--========-->
-                                            <div class="w-2 h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-white rounded-full mr-3.5 md:mr-5"></div>
-                                            <!--========-->
-                                            <div class=" sm:w-2/5 w-full h-1 sm:h-1.5 lg:h-2 bg-white shadow-3xl rounded-full relative">
-                                                <!--========-->
-                                                <div class=" w-1/3 h-1 sm:h-1.5 lg:h-2 rounded-l-full bg-[#0B2158]">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--========-->
-                                        <div class=" flex items-center">
-                                            <!--========-->
-                                            <div class="w-2 h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-white rounded-full mr-3.5 md:mr-5"></div>
-                                            <!--========-->
-                                            <div class=" sm:w-2/5 w-full h-1 sm:h-1.5 lg:h-2 bg-white shadow-3xl rounded-full relative">
-                                                <!--========-->
-                                                <div class=" w-1/3 h-1 sm:h-1.5 lg:h-2 rounded-l-full bg-[#0B2158]">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!--========-->
-                                        <div class=" flex items-center">
-                                            <!--========-->
-                                            <div class="w-2 h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-white rounded-full mr-3.5 md:mr-5"></div>
-                                            <!--========-->
-                                            <div class=" sm:w-2/5 w-full h-1 sm:h-1.5 lg:h-2 bg-white shadow-3xl rounded-full relative">
-                                                <!--========-->
-                                                <div class=" w-1/3 h-1 sm:h-1.5 lg:h-2 rounded-l-full bg-[#0B2158]">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--========-->
-                                    <div>
-                                        <!--========-->
-                                        <p class=" lg:text-lg md:text-sm text-xs md:my-9 my-4">THE PROJECT</p>
-                                        <!--========-->
-                                        <div class="flex items-center justify-between">
-                                            <!--========-->
-                                            <div class="flex items-center">
-                                                <!--========-->
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 25 16"
-                                                    fill="none">
-                                                    <path
-                                                        d="M19.4056 0.874126C19.0559 0.34965 18.3566 0 17.6573 0H2.27273C1.04895 0 0 1.04895 0 2.27273V13.1119C0 14.3357 1.04895 15.3846 2.27273 15.3846H17.6573C18.3566 15.3846 19.0559 15.035 19.4056 14.5105L25 7.69231L19.4056 0.874126ZM18.007 13.4615L17.6573 13.6364H2.27273C1.92308 13.6364 1.74825 13.4615 1.74825 13.1119V2.27273C1.74825 1.92308 1.92308 1.74825 2.27273 1.74825H17.6573L18.007 1.92308L22.7273 7.69231L18.007 13.4615ZM16.0839 4.54545C14.3357 4.54545 12.9371 5.94406 12.9371 7.69231C12.9371 9.44056 14.3357 10.8392 16.0839 10.8392C17.8322 10.8392 19.2308 9.44056 19.2308 7.69231C19.2308 5.94406 17.8322 4.54545 16.0839 4.54545ZM16.0839 9.09091C15.3846 9.09091 14.6853 8.56643 14.6853 7.69231C14.6853 6.81818 15.2098 6.29371 16.0839 6.29371C16.958 6.29371 17.4825 6.99301 17.4825 7.69231C17.4825 8.39161 16.958 9.09091 16.0839 9.09091Z"
-                                                        fill="#F5F8FF" />
-                                                </svg>
-                                                <!--========-->
-                                                <p class=" text-[8px] md:text-sm lg:text-base ml-2">$10,000 to $49,999</p>
-                                            </div>
-                                            <!--========-->
-                                            <div class="flex items-center">
-                                                <!--========-->
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 md:w-5 md:h-5" viewBox="0 0 20 23"
-                                                    fill="none">
-                                                    <path
-                                                        d="M17.619 2.22222H16.8254V0H15.2381V2.22222H4.60317V0H3.01587V2.22222H0V22.2222H20V2.22222H17.619ZM18.4127 20.6349H1.5873V8.4127H18.4127V20.6349ZM8.4127 15.3968H3.80952V10.7937H8.4127V15.3968Z"
-                                                        fill="#F5F8FF" />
-                                                </svg>
-                                                <!--========-->
-                                                <p class=" text-[8px] md:text-sm lg:text-base ml-2">Mar. 2021 - Ongoing</p>
-                                            </div>
-                                        </div>
-                                        <!--========-->
-                                        <div class=" md:p-4 p-2 rounded-xl bg-white mt-3">
-                                            <!--========-->
-                                            <p class="text-black lg:text-xl md:text-base text-xs">Project summary</p>
-                                            <!--========-->
-                                            <p class="text-slate-500 lg:text-base md:text-xs text-[9px]">Exometrics created a machine learning
-                                                (ML) algorithm for a digital asset mining company’s anti-money laundering tool.
-                                                Their work involved creating a proof of concept (POC) for the firm to use in their service.</p>
-                                        </div>
-                                    </div>
-                                    <!--========-->
-                                    <div class=" flex items-center space-x-2 md:my-8 my-3">
-                                        <!--========-->
-                                        <img height="100%" width="100%" class="lg:h-20 lg:w-20 w-14 h-14 rounded-full" src="images/Home/c2.png"
-                                            alt="//">
-                                        <!--========-->
-                                        <div>
-                                            <!--========-->
-                                            <p class=" text-[8px] md:text-[10px] lg:text-sm">Ian Gilmour</p>
-                                            <!--========-->
-                                            <p class=" text-xs md:text-sm lg:text-lg font-medium">Former CEO, Parabolic Digital</p>
-                                            <!--========-->
-                                            <div class=" flex items-center">
-                                                <!--========-->
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                                    <path
-                                                        d="M13.7 5L12.9 5.2L13.2 7C13.2 10.4 10.4 13.1 7 13.1C3.6 13.1 0.8 10.4 0.8 7C0.787367 5.89849 1.07325 4.81411 1.62731 3.86199C2.18136 2.90988 2.9829 2.12557 3.94682 1.59234C4.91075 1.0591 6.00108 0.796842 7.10206 0.833405C8.20304 0.869968 9.27357 1.20399 10.2 1.8L10.6 1C9.5 0.3 8.3 0 7 0C5.14348 0 3.36301 0.737498 2.05025 2.05025C0.737498 3.36301 0 5.14348 0 7C0 10.9 3.1 14 7 14C8.08954 13.9987 9.16375 13.7431 10.1371 13.2536C11.1105 12.764 11.9561 12.054 12.6067 11.18C13.2573 10.3061 13.695 9.29228 13.8848 8.21939C14.0746 7.14651 14.0113 6.04413 13.7 5ZM4.9 5.4L4.3 6L7.1 8.8L13.8 2.1L13.2 1.5L7.1 7.6L4.9 5.4Z"
-                                                        fill="#F5F8FF" />
-                                                </svg>
-                                                <!--========-->
-                                                <p class=" text-[7px] md:text-[9px] lg:text-xs font-medium ml-2">Verified</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--========-->
-                                    <div>
-                                        <!--========-->
-                                        <p class="lg:text-xl md:text-base text-xs ml-2">Feedback summaryy</p>
-                                        <!--========-->
-                                        <div class=" md:p-4 p-2 rounded-xl bg-white">
-                                            <!--========-->
-                                            <p class="text-slate-500 lg:text-base md:text-xs text-[9px]">The engagement was successful. Thanks
-                                                to Exometrics’ work, the company gained higher B2B engagements and sales. The team
-                                                delivered the POC on time and within budget, and they leveraged their data science expertise to
-                                                work independently.
-                                                Overall, they met all of the client’s expectations.</p>
-                                        </div>
-                                    </div>
-                        
-                                </div>
-                            </div>
-                            <!--========-->
-                            <div
-                                class="transform scale-[1.15] xl:w-3/4 md:w-3/5 w-10/12 min-w-[200px] md:min-w-[500px] mx-auto bg-blue-800 rounded-[20px] md:p-6 p-4 shadow-5xl z-30">
-                                <!--========-->
-                                <div class=" flex items-center space-x-1">
-                                    <!--========-->
-                                    <div class="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-6 lg:h-6 bg-[#0B2158] rounded-full"></div>
-                                    <!--========-->
-                                    <div class="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-6 lg:h-6 bg-[#3A5EB8] rounded-full"></div>
-                                    <!--========-->
-                                    <div class="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-6 lg:h-6 bg-white rounded-full"></div>
-                                </div>
+                                <div class="swiper-pagination2"></div>
                                 <!--========-->
                                 <div class="md:p-11 sm:p-5 py-4 text-white">
                                     <!--========-->
@@ -851,17 +687,9 @@
                                 </div>
                             </div>
                             <!--========-->
-                            <div
-                                class="absolute right-0 left-0 transform translate-x-20 md:translate-x-40 lg:translate-x-52 xl:-translate-x-72 xl:w-3/4 md:w-3/5 w-10/12 min-w-[200px] md:min-w-[500px] mx-auto bg-blue-800 rounded-[20px] md:p-6 p-4 shadow-5xl z-10">
+                            <div class="swiper-slide mx-auto bg-blue-800 rounded-[20px] md:p-6 p-4 z-30">
                                 <!--========-->
-                                <div class=" flex items-center space-x-1">
-                                    <!--========-->
-                                    <div class="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-6 lg:h-6 bg-[#0B2158] rounded-full"></div>
-                                    <!--========-->
-                                    <div class="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-6 lg:h-6 bg-[#3A5EB8] rounded-full"></div>
-                                    <!--========-->
-                                    <div class="w-4 h-4 md:w-[18px] md:h-[18px] lg:w-6 lg:h-6 bg-white rounded-full"></div>
-                                </div>
+                                <div class="swiper-pagination2"></div>
                                 <!--========-->
                                 <div class="md:p-11 sm:p-5 py-4 text-white">
                                     <!--========-->
@@ -1048,35 +876,209 @@
                                                 Overall, they met all of the client’s expectations.</p>
                                         </div>
                                     </div>
-                        
+                                </div>
+                            </div>
+                            <!--========-->
+                            <div class="swiper-slide mx-auto bg-blue-800 rounded-[20px] md:p-6 p-4 z-30">
+                                <!--========-->
+                                <div class="swiper-pagination2"></div>
+                                <!--========-->
+                                <div class="md:p-11 sm:p-5 py-4 text-white">
+                                    <!--========-->
+                                    <div>
+                                        <!--========-->
+                                        <h1 class=" font-bold lg:text-2xl md:text-lg text-base md:mb-6 mb-3">ML-Based Anti-Money Laundering Tool
+                                            for Digital Assets Firm</h1>
+                                        <!--========-->
+                                        <p class="lg:text-lg md:text-sm text-xs opacity-90">“Their ML skills were top-notch.”</p>
+                                    </div>
+                                    <!--========-->
+                                    <div class=" flex items-center md:my-4 my-3">
+                                        <!--========-->
+                                        <p class="md:text-3xl text-lg mr-3.5">5.0</p>
+                                        <!--========-->
+                                        <div class=" flex items-center space-x-2 text-[#F97316]">
+                                            <!--========-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 w-4 h-4" viewBox="0 0 20 20"
+                                                fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
+                                        </div>
+                                        <!--========-->
+                                        <div class=" flex items-center space-x-2 text-[#F97316]">
+                                            <!--========-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 w-4 h-4" viewBox="0 0 20 20"
+                                                fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
+                                        </div>
+                                        <!--========-->
+                                        <div class=" flex items-center space-x-2 text-[#F97316]">
+                                            <!--========-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 w-4 h-4" viewBox="0 0 20 20"
+                                                fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
+                                        </div>
+                                        <!--========-->
+                                        <div class=" flex items-center space-x-2 text-[#F97316]">
+                                            <!--========-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 w-4 h-4" viewBox="0 0 20 20"
+                                                fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
+                                        </div>
+                                        <!--========-->
+                                        <div class=" flex items-center space-x-2 text-[#F97316]">
+                                            <!--========-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="md:h-6 md:w-6 w-4 h-4" viewBox="0 0 20 20"
+                                                fill="currentColor">
+                                                <path
+                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!--========-->
+                                    <div class=" space-y-2">
+                                        <!--========-->
+                                        <div class=" flex items-center">
+                                            <!--========-->
+                                            <div class="w-2 h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-white rounded-full mr-3.5 md:mr-5"></div>
+                                            <!--========-->
+                                            <div class=" sm:w-2/5 w-full h-1 sm:h-1.5 lg:h-2 bg-white shadow-3xl rounded-full relative">
+                                                <!--========-->
+                                                <div class=" w-1/3 h-1 sm:h-1.5 lg:h-2 rounded-l-full bg-[#0B2158]">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--========-->
+                                        <div class=" flex items-center">
+                                            <!--========-->
+                                            <div class="w-2 h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-white rounded-full mr-3.5 md:mr-5"></div>
+                                            <!--========-->
+                                            <div class=" sm:w-2/5 w-full h-1 sm:h-1.5 lg:h-2 bg-white shadow-3xl rounded-full relative">
+                                                <!--========-->
+                                                <div class=" w-1/3 h-1 sm:h-1.5 lg:h-2 rounded-l-full bg-[#0B2158]">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--========-->
+                                        <div class=" flex items-center">
+                                            <!--========-->
+                                            <div class="w-2 h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-white rounded-full mr-3.5 md:mr-5"></div>
+                                            <!--========-->
+                                            <div class=" sm:w-2/5 w-full h-1 sm:h-1.5 lg:h-2 bg-white shadow-3xl rounded-full relative">
+                                                <!--========-->
+                                                <div class=" w-1/3 h-1 sm:h-1.5 lg:h-2 rounded-l-full bg-[#0B2158]">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--========-->
+                                        <div class=" flex items-center">
+                                            <!--========-->
+                                            <div class="w-2 h-2 md:w-3 md:h-3 lg:w-4 lg:h-4 bg-white rounded-full mr-3.5 md:mr-5"></div>
+                                            <!--========-->
+                                            <div class=" sm:w-2/5 w-full h-1 sm:h-1.5 lg:h-2 bg-white shadow-3xl rounded-full relative">
+                                                <!--========-->
+                                                <div class=" w-1/3 h-1 sm:h-1.5 lg:h-2 rounded-l-full bg-[#0B2158]">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--========-->
+                                    <div>
+                                        <!--========-->
+                                        <p class=" lg:text-lg md:text-sm text-xs md:my-9 my-4">THE PROJECT</p>
+                                        <!--========-->
+                                        <div class="flex items-center justify-between">
+                                            <!--========-->
+                                            <div class="flex items-center">
+                                                <!--========-->
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 md:w-6 md:h-6" viewBox="0 0 25 16"
+                                                    fill="none">
+                                                    <path
+                                                        d="M19.4056 0.874126C19.0559 0.34965 18.3566 0 17.6573 0H2.27273C1.04895 0 0 1.04895 0 2.27273V13.1119C0 14.3357 1.04895 15.3846 2.27273 15.3846H17.6573C18.3566 15.3846 19.0559 15.035 19.4056 14.5105L25 7.69231L19.4056 0.874126ZM18.007 13.4615L17.6573 13.6364H2.27273C1.92308 13.6364 1.74825 13.4615 1.74825 13.1119V2.27273C1.74825 1.92308 1.92308 1.74825 2.27273 1.74825H17.6573L18.007 1.92308L22.7273 7.69231L18.007 13.4615ZM16.0839 4.54545C14.3357 4.54545 12.9371 5.94406 12.9371 7.69231C12.9371 9.44056 14.3357 10.8392 16.0839 10.8392C17.8322 10.8392 19.2308 9.44056 19.2308 7.69231C19.2308 5.94406 17.8322 4.54545 16.0839 4.54545ZM16.0839 9.09091C15.3846 9.09091 14.6853 8.56643 14.6853 7.69231C14.6853 6.81818 15.2098 6.29371 16.0839 6.29371C16.958 6.29371 17.4825 6.99301 17.4825 7.69231C17.4825 8.39161 16.958 9.09091 16.0839 9.09091Z"
+                                                        fill="#F5F8FF" />
+                                                </svg>
+                                                <!--========-->
+                                                <p class=" text-[8px] md:text-sm lg:text-base ml-2">$10,000 to $49,999</p>
+                                            </div>
+                                            <!--========-->
+                                            <div class="flex items-center">
+                                                <!--========-->
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 md:w-5 md:h-5" viewBox="0 0 20 23"
+                                                    fill="none">
+                                                    <path
+                                                        d="M17.619 2.22222H16.8254V0H15.2381V2.22222H4.60317V0H3.01587V2.22222H0V22.2222H20V2.22222H17.619ZM18.4127 20.6349H1.5873V8.4127H18.4127V20.6349ZM8.4127 15.3968H3.80952V10.7937H8.4127V15.3968Z"
+                                                        fill="#F5F8FF" />
+                                                </svg>
+                                                <!--========-->
+                                                <p class=" text-[8px] md:text-sm lg:text-base ml-2">Mar. 2021 - Ongoing</p>
+                                            </div>
+                                        </div>
+                                        <!--========-->
+                                        <div class=" md:p-4 p-2 rounded-xl bg-white mt-3">
+                                            <!--========-->
+                                            <p class="text-black lg:text-xl md:text-base text-xs">Project summary</p>
+                                            <!--========-->
+                                            <p class="text-slate-500 lg:text-base md:text-xs text-[9px]">Exometrics created a machine learning
+                                                (ML) algorithm for a digital asset mining company’s anti-money laundering tool.
+                                                Their work involved creating a proof of concept (POC) for the firm to use in their service.</p>
+                                        </div>
+                                    </div>
+                                    <!--========-->
+                                    <div class=" flex items-center space-x-2 md:my-8 my-3">
+                                        <!--========-->
+                                        <img height="100%" width="100%" class="lg:h-20 lg:w-20 w-14 h-14 rounded-full" src="images/Home/c2.png"
+                                            alt="//">
+                                        <!--========-->
+                                        <div>
+                                            <!--========-->
+                                            <p class=" text-[8px] md:text-[10px] lg:text-sm">Ian Gilmour</p>
+                                            <!--========-->
+                                            <p class=" text-xs md:text-sm lg:text-lg font-medium">Former CEO, Parabolic Digital</p>
+                                            <!--========-->
+                                            <div class=" flex items-center">
+                                                <!--========-->
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                    <path
+                                                        d="M13.7 5L12.9 5.2L13.2 7C13.2 10.4 10.4 13.1 7 13.1C3.6 13.1 0.8 10.4 0.8 7C0.787367 5.89849 1.07325 4.81411 1.62731 3.86199C2.18136 2.90988 2.9829 2.12557 3.94682 1.59234C4.91075 1.0591 6.00108 0.796842 7.10206 0.833405C8.20304 0.869968 9.27357 1.20399 10.2 1.8L10.6 1C9.5 0.3 8.3 0 7 0C5.14348 0 3.36301 0.737498 2.05025 2.05025C0.737498 3.36301 0 5.14348 0 7C0 10.9 3.1 14 7 14C8.08954 13.9987 9.16375 13.7431 10.1371 13.2536C11.1105 12.764 11.9561 12.054 12.6067 11.18C13.2573 10.3061 13.695 9.29228 13.8848 8.21939C14.0746 7.14651 14.0113 6.04413 13.7 5ZM4.9 5.4L4.3 6L7.1 8.8L13.8 2.1L13.2 1.5L7.1 7.6L4.9 5.4Z"
+                                                        fill="#F5F8FF" />
+                                                </svg>
+                                                <!--========-->
+                                                <p class=" text-[7px] md:text-[9px] lg:text-xs font-medium ml-2">Verified</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--========-->
+                                    <div>
+                                        <!--========-->
+                                        <p class="lg:text-xl md:text-base text-xs ml-2">Feedback summaryy</p>
+                                        <!--========-->
+                                        <div class=" md:p-4 p-2 rounded-xl bg-white">
+                                            <!--========-->
+                                            <p class="text-slate-500 lg:text-base md:text-xs text-[9px]">The engagement was successful. Thanks
+                                                to Exometrics’ work, the company gained higher B2B engagements and sales. The team
+                                                delivered the POC on time and within budget, and they leveraged their data science expertise to
+                                                work independently.
+                                                Overall, they met all of the client’s expectations.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!--========-->
-                        <div class="flex items-center justify-center gap-2.5 mt-24 z-30 relative">
-                            <!--====left====-->
-                            <button class=" outline-none text-white" aria-label="previous">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                                </svg>
-                            </button>
-                            <!--====circle====-->
-                            <div class=" flex items-center justify-center gap-2.5">
-                                <!--========-->
-                                <button class=" outline-none bg-white h-2.5 w-2.5 rounded-full" aria-label="1"></button>
-                                <!--========-->
-                                <button class=" outline-none bg-white h-2.5 w-2.5 rounded-full" aria-label="2"></button>
-                                <!--========-->
-                                <button class=" outline-none bg-white h-2.5 w-2.5 rounded-full" aria-label="3"></button>
-                            </div>
-                            <!--====right====-->
-                            <button class=" outline-none text-white" aria-label="next">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
+                        <div class="swiper-pagination2 pt-10 flex items-center justify-center"></div>
+                        <!--========-->
+                        <div>
+                            <!--========-->
+                            <div class="swiper-button-prev"></div>
+                            <!--========-->
+                            <div class="swiper-button-next"></div>
                         </div>
                     </div>
                 </div>
@@ -1348,12 +1350,12 @@
                     <div>
                         <!--====logo====-->
                         <a href="/"
-                            class="flex items-end font-josefinsans font-bold lg:text-3xl sm:text-xl text-base text-white space-x-3 leading-[2rem!important]">
+                            class="flex items-end font-josefinsans font-bold lg:text-2xl sm:text-lg text-sm text-white space-x-3 xl:leading-[2rem!important] leading-[1rem!important] whitespace-nowrap">
                             <!--========-->
-                            <img height="100%" width="100%" class=" w-7 h-7 lg:w-10 lg:h-10 object-cover"
+                            <img height="100%" width="100%" class=" w-7 h-7 xl:w-10 xl:h-10 object-cover"
                                 src="images/Logo/logo.png" alt="//">
                             <!--========-->
-                            <span>Rekindle</span>
+                            <span>Rekindle Data</span>
                         </a>
                         <!--====mobile dropdown====-->
                         <div class=" mt-5 space-y-4 block lg:hidden">
@@ -1376,15 +1378,15 @@
                                     class="space-y-2 relative overflow-hidden transition-all max-h-0 duration-700">
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-blue-50">
-                                        <a href="#">Find a Professional</a>
+                                        <a class="hover:underline" href="#">Find a Professional</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-blue-50">
-                                        <a href="#">how it works</a>
+                                        <a class="hover:underline" href="#">How it Works</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-blue-50">
-                                        <a href="#">Login</a>
+                                        <a class="hover:underline" href="#">Login</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1407,23 +1409,23 @@
                                     class="space-y-2 relative overflow-hidden transition-all max-h-0 duration-700">
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">How it works</a>
+                                        <a class="hover:underline" href="#">How it works</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">Pricing</a>
+                                        <a class="hover:underline" href="#">Pricing</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">join as a Professional</a>
+                                        <a class="hover:underline" href="#">Join as a Professional</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">Help Centre</a>
+                                        <a class="hover:underline" href="#">Help Centre</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">Mobile App</a>
+                                        <a class="hover:underline" href="#">Mobile App</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1446,19 +1448,19 @@
                                     class="space-y-2 relative overflow-hidden transition-all max-h-0 duration-700">
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">About Rekindle Data</a>
+                                        <a class="hover:underline" href="#">About Rekindle Data</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">Team</a>
+                                        <a class="hover:underline" href="#">Team</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">Careers</a>
+                                        <a class="hover:underline" href="#">Careers</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">Blog</a>
+                                        <a class="hover:underline" href="#">Blog</a>
                                     </li>
                                 </ul>
                             </div>
@@ -1472,15 +1474,15 @@
                             <li class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2">For Customers</li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-blue-50">
-                                <a href="#">Find a Professional</a>
+                                <a class="hover:underline" href="#">Find a Professional</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-blue-50">
-                                <a href="#">how it works</a>
+                                <a class="hover:underline" href="#">How it Works</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-blue-50">
-                                <a href="#">Login</a>
+                                <a class="hover:underline" href="#">Login</a>
                             </li>
                         </ul>
                         <!--========-->
@@ -1489,23 +1491,23 @@
                             <li class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2">For Professional</li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">How it works</a>
+                                <a class="hover:underline" href="#">How it works</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">Pricing</a>
+                                <a class="hover:underline" href="#">Pricing</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">join as a Professional</a>
+                                <a class="hover:underline" href="#">Join as a Professional</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">Help Centre</a>
+                                <a class="hover:underline" href="#">Help Centre</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">Mobile App</a>
+                                <a class="hover:underline" href="#">Mobile App</a>
                             </li>
                         </ul>
                         <!--========-->
@@ -1514,19 +1516,19 @@
                             <li class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2">About</li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">About Rekindle Data</a>
+                                <a class="hover:underline" href="#">About Rekindle Data</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">Team</a>
+                                <a class="hover:underline" href="#">Team</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">Careers</a>
+                                <a class="hover:underline" href="#">Careers</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">Blog</a>
+                                <a class="hover:underline" href="#">Blog</a>
                             </li>
                         </ul>
                     </div>
@@ -1535,7 +1537,7 @@
                         <!--========-->
                         <div class=" text-right text-white">
                             <!--========-->
-                            <p class="text-xs lg:text-[9px] font-mulish leading-tight">Team@bark.com</p>
+                            <p class="text-xs lg:text-[9px] font-mulish leading-tight">hello@rekindledata.com</p>
                             <!--========-->
                             <p class="lg:text-base text-sm leading-tight">(604) 222-2221</p>
                             <!--========-->
@@ -1543,81 +1545,112 @@
                                 week)</p>
                         </div>
                         <!--========-->
-                        <div x-data="{modal:false}" class=" mt-3 w-full sm:w-auto relative">
+                        <div x-data="{modal:false}" class=" mt-3 w-full sm:w-auto">
                             <!--========-->
-                            <button @click="modal=true"
-                                class="relative flex items-center h-7 sm:w-44 w-full sm:text-xs text-[8px] tracking-[0.005em] text-blue-50 placeholder-blue-50 rounded-md px-3 p-2 bg-[#666666] outline-none">
+                            <div x-data="{select:'2'}">
                                 <!--========-->
-                                <img height="100%" width="100%" class="w-auto h-auto object-cover mr-2"
-                                    src="images/icons/canada_flag.png" alt="//">
-                                <!--========-->
-                                <span>Canada</span>
-                                <!--========-->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-2 h-4 w-4" viewBox="0 0 20 20"
-                                    fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <!--========-->
-                            <div x-show="modal" x-transition
-                                class=" fixed left-0 right-0 top-0 bottom-0 bg-black bg-opacity-30 z-50 flex items-center justify-center shadow-5xl ">
-                                <!--========-->
-                                <div @click.away="modal=false"
-                                    class="md:w-3/5 w-11/12 h-[90%] bg-white rounded-xl  xl:p-20 p-16 px-5 flex lg:justify-center relative">
+                                <div @click="modal=true"
+                                    class="relative h-7 sm:w-44 w-full sm:text-xs text-[8px] tracking-[0.005em] text-blue-50 placeholder-blue-50 rounded-md px-3 p-2 cursor-pointer bg-[#666666]">
                                     <!--========-->
-                                    <div class=" md:w-1/2 w-11/12 whitespace-nowrap">
+                                    <button x-show="select==='1'" @click="modal=false" class=" outline-none flex items-center">
                                         <!--========-->
-                                        <h1 class=" font-bold text-4xl text-black mb-10 font-mulish tracking-wider">Choose
-                                            country</h1>
+                                        <img height="100%" width="100%" class="w-4 h-4 object-contain mr-2"
+                                            src="images/icons/gb-flag.png" alt="//">
                                         <!--========-->
-                                        <div class=" space-y-4 h-full overflow-y-auto">
+                                        <span>United Kingdom</span>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-2 h-4 w-4"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                    <!--========-->
+                                    <button x-show="select==='2'" @click="modal=false"
+                                        class=" outline-none flex items-center justify-between">
+                                        <!--========-->
+                                        <img height="100%" width="100%" class="h-4 w-4 object-contain mr-2"
+                                            src="images/icons/ca-flag.png" alt="//">
+                                        <!--========-->
+                                        <span>Canada</span>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-2 h-4 w-4"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                    <!--========-->
+                                    <button x-show="select==='3'" @click="modal=false"
+                                        class=" outline-none flex items-center justify-between">
+                                        <!--========-->
+                                        <img height="100%" width="100%" class="h-4 w-4 object-contain mr-2"
+                                            src="images/icons/us-flag.png" alt="//">
+                                        <!--========-->
+                                        <span>United States</span>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-2 h-4 w-4"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <!--========-->
+                                <div x-show="modal" x-transition
+                                    class=" fixed left-0 right-0 top-0 bottom-0 bg-black bg-opacity-30 z-50 flex items-center justify-center shadow-5xl">
+                                    <!--========-->
+                                    <div @click.away="modal=false"
+                                        class="md:w-3/5 w-11/12 h-[90%] bg-white rounded-xl  xl:p-20 p-16 px-5 flex lg:justify-center relative">
+                                        <!--========-->
+                                        <div class=" md:w-1/2 w-11/12 whitespace-nowrap">
                                             <!--========-->
-                                            <div
-                                                class="flex flex-row items-center p-2 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
-                                                <img alt="United Kingdom flag" width="28" height="20"
-                                                    src="https://d18jakcjgoan9.cloudfront.net/s/img/img/barkv2/flags/gb-flag.png!d=2MasO"
-                                                    data-was-processed="true">
-                                                <p class="mb-0">United Kingdom</p>
-                                            </div>
+                                            <h1 class=" font-bold text-4xl text-black mb-10 font-mulish tracking-wider">Choose
+                                                country</h1>
                                             <!--========-->
-                                            <div
-                                                class="flex flex-row items-center p-2 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
-                                                <img alt="United Kingdom flag" width="28" height="20"
-                                                    src="https://d18jakcjgoan9.cloudfront.net/s/img/img/barkv2/flags/gb-flag.png!d=2MasO"
-                                                    data-was-processed="true">
-                                                <p class="mb-0">Canada</p>
-                                            </div>
-                                            <!--========-->
-                                            <div
-                                                class="flex flex-row items-center p-2 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
-                                                <img alt="United Kingdom flag" width="28" height="20"
-                                                    src="https://d18jakcjgoan9.cloudfront.net/s/img/img/barkv2/flags/gb-flag.png!d=2MasO"
-                                                    data-was-processed="true">
-                                                <p class="mb-0">United States</p>
-                                            </div>
-                                            <!--========-->
-                                            <div
-                                                class="flex flex-row items-center p-2 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
-                                                <img alt="United Kingdom flag" width="28" height="20"
-                                                    src="https://d18jakcjgoan9.cloudfront.net/s/img/img/barkv2/flags/gb-flag.png!d=2MasO"
-                                                    data-was-processed="true">
-                                                <p class="mb-0">Canada</p>
-                                            </div>
-                                            <!--========-->
-                                            <div
-                                                class="flex flex-row items-center p-2 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
-                                                <img alt="United Kingdom flag" width="28" height="20"
-                                                    src="https://d18jakcjgoan9.cloudfront.net/s/img/img/barkv2/flags/gb-flag.png!d=2MasO"
-                                                    data-was-processed="true">
-                                                <p class="mb-0">United States</p>
+                                            <div class=" space-y-4 h-full overflow-y-auto">
+                                                <!--========-->
+                                                <div @click="modal=false">
+                                                    <!--========-->
+                                                    <div :class="{'border rounded-md':select==='1'}" @click="select='1'"
+                                                        class="flex flex-row items-center p-2 px-3 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
+                                                        <!--========-->
+                                                        <img height="100%" width="100%" class="w-7 h-7 mr-2 object-contain"
+                                                            src="images/icons/gb-flag.png " alt="//">
+                                                        <p class="mb-0">United Kingdom</p>
+                                                    </div>
+                                                </div>
+                                                <!--========-->
+                                                <div @click="modal=false">
+                                                    <!--========-->
+                                                    <div :class="{'border rounded-md':select==='2'}" @click="select='2'"
+                                                        class="flex flex-row items-center p-2 px-3 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
+                                                        <!--========-->
+                                                        <img height="100%" width="100%" class="w-7 h-7 mr-2 object-contain"
+                                                            src="images/icons/ca-flag.png" alt="//">
+                                                        <p class="mb-0">Canada</p>
+                                                    </div>
+                                                </div>
+                                                <!--========-->
+                                                <div @click="modal=false">
+                                                    <!--========-->
+                                                    <div :class="{'border rounded-md':select==='3'}" @click="select='3'"
+                                                        class="flex flex-row items-center p-2 px-3 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
+                                                        <!--========-->
+                                                        <img height="100%" width="100%" class="w-7 h-7 mr-2 object-contain"
+                                                            src="images/icons/us-flag.png" alt="//">
+                                                        <p class="mb-0">United States</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!---->
+                                    <!--========-->
                                     <button @click="modal=false"
-                                        class="absolute top-6 right-6 text-gray-500 hover:text-gray-700">
+                                        class="absolute top-[5%] md:right-[20%] right-[5%] text-gray-500 hover:text-gray-700 z-50 p-4">
                                         <svg xmlns="http://www.w3.org/2000/svg" class=" w-6 h-6" fill="none" viewBox="0 0 24 24"
                                             stroke="currentColor" stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -1675,11 +1708,56 @@
                 <!--====bottom====-->
                 <div>
                     <p class="sm:pt-16 pt-6 pb-6 text-[7px] sm:text-[10px] lg:text-sm font-mulish text-[#A5A5A5] text-center">©
-                        2022 Bark.com Global Limited. Terms & Conditions / Cookie policy / Privacy policy</p>
+                        2022 Rekindle Data Global Limited. Terms & Conditions / Cookie policy / Privacy policy</p>
                 </div>
             </div>
         </footer>
-        <!---->
+        <!-----Alpine js---->
         <script src="js/alpine.min.js" defer></script>
+        <!-----Swiper Js script---->
+        <script src="js/swiper-bundle.min.js"></script>
+        
+        <script>
+            /*-----------------swiper 002----------------------*/
+            var swiper = new Swiper("#mySwiper4", {
+                effect: "coverflow",
+                grabCursor: true,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                centeredSlides: true,
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 100,
+                    slideShadows: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination2",
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: "1.2",
+                        coverflowEffect: {
+                            modifier: 2,
+                        },
+                    },
+                    768: {
+                        slidesPerView: "1.3",
+                        coverflowEffect: {
+                            modifier: 3,
+                            depth: 100,
+                        },
+                    },
+                },
+            });
+        </script>
     </body>
 </html>

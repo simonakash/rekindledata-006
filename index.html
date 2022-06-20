@@ -18,211 +18,218 @@
         <!--------->
         <title>Home || RekindleData</title>
 
-
+        <!-----Swiper Js css---->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css" />
         <!-----Tailwind css---->
         <link rel="stylesheet" href="output/tailwind.css">
-
+        <style>
+            #mySwiper2 .swiper-slide-active{
+                background-color: white !important;
+                color: black !important;
+            }
+            
+        </style>
     </head>
 
     <!--====================body====================-->
     <body class=" bg-neutral-800 font-inter overflow-x-hidden">
-    <!-- ==========header========== -->
-    <header>
-        <!--========-->
-        <nav
-            class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto flex items-center justify-between py-8 z-50">
-            <!--====logo====-->
-            <a href="/"
-                class="flex sm:items-end items-start font-josefinsans font-bold sm:text-[34px] text-lg text-white space-x-3">
-                <!--========-->
-                <img height="100%" width="100%" class=" sm:w-10 w-5 h-5 sm:h-10 object-cover" src="images/Logo/logo.png"
-                    alt="//">
-                <!--========-->
-                <p>Rekindle</p>
-            </a>
-            <!--====menu====-->
-            <div class="hidden lg:flex items-center xl:space-x-12 space-x-7">
-                <!--========-->
-                <ul class=" flex text-white space-x-7 font-bold text-base">
-                    <!---->
-                    <li>
-                        <a href="lead-genaration.html">Lead Generation</a>
-                    </li>
-                    <!---->
-                    <li>
-                        <a href="website-audits.html">Website Audits</a>
-                    </li>
-                    <!---->
-                    <li>
-                        <a href="consulting.html">Consulting</a>
-                    </li>
-                    <!---->
-                    <li @click.away="dropdown=false" x-data="{dropdown:false}" class=" relative">
+        <!-- ==========header========== -->
+        <header>
+            <!--========-->
+            <nav
+                class="xl:max-w-[1138px] md:max-w-[770px] lg:max-w-[1000px] sm:max-w-[640px] px-10 sm:px-0 mx-auto flex items-center justify-between py-8 z-50">
+                <!--====logo====-->
+                <a href="/"
+                    class="flex sm:items-end items-start font-josefinsans font-bold sm:text-[34px] text-lg text-white space-x-3 whitespace-nowrap">
+                    <!--========-->
+                    <img height="100%" width="100%" class=" sm:w-10 w-5 h-5 sm:h-10 object-cover" src="images/Logo/logo.png"
+                        alt="//">
+                    <!--========-->
+                    <p>Rekindle Data</p>
+                </a>
+                <!--====menu====-->
+                <div class="hidden lg:flex items-center xl:space-x-12 space-x-7">
+                    <!--========-->
+                    <ul class=" flex text-white space-x-7 font-bold text-base">
                         <!---->
-                        <a @click.prevent="dropdown=!dropdown" class=" flex items-end" href="#">
-                            <span>Explore</span>
-                            <svg :class="{'-rotate-180' : dropdown===true}" xmlns="http://www.w3.org/2000/svg"
-                                class=" transform duration-500 sm:h-6 sm:w-6 w-3 h-3 ml-1" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </a>
+                        <li>
+                            <a class="hover:underline" href="lead-genaration.html">Lead Generation</a>
+                        </li>
                         <!---->
-                        <div x-ref="container1"
-                            x-bind:style="dropdown == true ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
-                            class="absolute left-0 -right-44 top-10 overflow-hidden whitespace-nowrapx ml-2 mt-2 transition-all max-h-0 duration-700 bg-neutral-800  rounded-md shadow-4xl text-xs z-50">
+                        <li>
+                            <a class="hover:underline" href="website-audits.html">Website Audits</a>
+                        </li>
+                        <!---->
+                        <li>
+                            <a class="hover:underline" href="consulting.html">Consulting</a>
+                        </li>
+                        <!---->
+                        <li @click.away="dropdown=false" x-data="{dropdown:false}" class=" relative">
                             <!---->
-                            <div class=" flex items-center justify-between p-5">
+                            <a @click.prevent="dropdown=!dropdown" class=" flex items-end" href="#">
+                                <span>Explore</span>
+                                <svg :class="{'-rotate-180' : dropdown===true}" xmlns="http://www.w3.org/2000/svg"
+                                    class=" transform duration-500 sm:h-6 sm:w-6 w-3 h-3 ml-1" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                            <!---->
+                            <div x-ref="container1"
+                                x-bind:style="dropdown == true ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                                class="absolute left-0 -right-44 top-10 overflow-hidden whitespace-nowrapx ml-2 mt-2 transition-all max-h-0 duration-700 bg-neutral-800  rounded-md shadow-4xl text-xs z-50">
                                 <!---->
-                                <p class=" text-sm">Services</p>
+                                <div class=" flex items-center justify-between p-5">
+                                    <!---->
+                                    <p class=" text-sm">Services</p>
+                                    <!---->
+                                    <a class=" text-xs hover:underline" href="#">See more</a>
+                                </div>
                                 <!---->
-                                <a class=" text-xs hover:underline" href="#">See more</a>
+                                <ul class=" list-disc list-inside  space-y-4 p-5 pt-0">
+                                    <!---->
+                                    <li>
+                                        <!---->
+                                        <a class="hover:underline" href="#">Business</a>
+                                    </li>
+                                    <!---->
+                                    <li>
+                                        <!---->
+                                        <a class="hover:underline" href="#">Events & Entertainers</a>
+                                    </li>
+                                    <!---->
+                                    <li>
+                                        <!---->
+                                        <a class="hover:underline" href="#">House & Home</a>
+                                    </li>
+                                    <!---->
+                                    <li>
+                                        <!---->
+                                        <a class="hover:underline" href="#">Business</a>
+                                    </li>
+                                    <!---->
+                                    <li>
+                                        <!---->
+                                        <a class="hover:underline" href="#">Events & Entertainers</a>
+                                    </li>
+                                    <!---->
+                                    <li>
+                                        <!---->
+                                        <a class="hover:underline" href="#">House & Home</a>
+                                    </li>
+                                </ul>
                             </div>
-                            <!---->
-                            <ul class=" list-disc list-inside  space-y-4 p-5 pt-0">
+                        </li>
+                    </ul>
+                    <!--========-->
+                    <button
+                        class=" outline-none text-sm text-white font-bold border rounded-full border-blue-800 px-12 py-2.5">Login</button>
+                </div>
+                <!--====Humberger menu====-->
+                <div @click.away="humberger=false" class=" block lg:hidden" x-data="{humberger: false}">
+                    <!--====menu button====-->
+                    <button @click.prevent="humberger=!humberger" aria-label="Mobile Menu button"
+                        class="outline-none text-white p-1">
+                        <!---->
+                        <svg x-show="humberger===false" xmlns="http://www.w3.org/2000/svg" class="sm:h-12 sm:w-12 w-6 h-6"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!---->
+                        <svg x-show="humberger===true" xmlns="http://www.w3.org/2000/svg" class="sm:h-12 sm:w-12 w-6 h-6"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <!--====Mobile menu====-->
+                    <div :class="{'translate-x-0' : humberger, '-translate-x-full': !humberger  }"
+                        class="fixed lg:hidden w-3/5 transform transition-transform duration-700 ease-in-out z-50 bg-neutral-800 left-0 top-0 bottom-0 shadow-2xl">
+                        <!--====menu====-->
+                        <div class=" p-5">
+                            <!--====logo====-->
+                            <div class=" my-4">
+                                <!--====logo====-->
+                                <a href="/"
+                                    class="flex sm:items-end items-start font-josefinsans font-bold sm:text-[34px] text-lg text-white space-x-3">
+                                    <!--========-->
+                                    <img height="100%" width="100%" class=" sm:w-10 w-5 h-5 sm:h-10 object-cover"
+                                        src="images/Logo/logo.png" alt="//">
+                                    <!--========-->
+                                    <p>Rekindle</p>
+                                </a>
+                            </div>
+                            <!--========-->
+                            <ul
+                                class="space-y-4 flex flex-col items-start justify-center text-white font-bold sm:text-base text-xs mt-10">
                                 <!---->
                                 <li>
-                                    <!---->
-                                    <a href="#">Business</a>
+                                    <a class="hover:underline" href="lead-genaration.html">Lead Generation</a>
                                 </li>
                                 <!---->
                                 <li>
-                                    <!---->
-                                    <a href="#">Events & Entertainers</a>
+                                    <a class="hover:underline" href="website-audits.html">Website Audits</a>
                                 </li>
                                 <!---->
                                 <li>
-                                    <!---->
-                                    <a href="#">House & Home</a>
+                                    <a class="hover:underline" href="consulting.html">Consulting</a>
                                 </li>
                                 <!---->
-                                <li>
+                                <li x-data="{dropdown:false}" class=" relative">
                                     <!---->
-                                    <a href="#">Business</a>
-                                </li>
-                                <!---->
-                                <li>
+                                    <a @click.prevent="dropdown=!dropdown" class=" flex items-end" href="#">
+                                        <span>Explore</span>
+                                        <svg :class="{'-rotate-180' : dropdown===true}" xmlns="http://www.w3.org/2000/svg"
+                                            class=" transform duration-500 sm:h-6 sm:w-6 w-3 h-3 ml-1" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
                                     <!---->
-                                    <a href="#">Events & Entertainers</a>
-                                </li>
-                                <!---->
-                                <li>
-                                    <!---->
-                                    <a href="#">House & Home</a>
+                                    <ul x-ref="container1"
+                                        x-bind:style="dropdown == true ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
+                                        class="space-y-4 ml-2 mt-2 relative overflow-hidden transition-all max-h-0 duration-700 list-disc list-inside">
+                                        <!---->
+                                        <li>
+                                            <!---->
+                                            <a class="hover:underline" href="#">Business</a>
+                                        </li>
+                                        <!---->
+                                        <li>
+                                            <!---->
+                                            <a class="hover:underline" href="#">Events & Entertainers</a>
+                                        </li>
+                                        <!---->
+                                        <li>
+                                            <!---->
+                                            <a class="hover:underline" href="#">House & Home</a>
+                                        </li>
+                                        <!---->
+                                        <li>
+                                            <!---->
+                                            <a class="hover:underline" href="#">Business</a>
+                                        </li>
+                                        <!---->
+                                        <li>
+                                            <!---->
+                                            <a class="hover:underline" href="#">Events & Entertainers</a>
+                                        </li>
+                                        <!---->
+                                        <li>
+                                            <!---->
+                                            <a class="hover:underline" href="#">House & Home</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
-                    </li>
-                </ul>
-                <!--========-->
-                <button
-                    class=" outline-none text-sm text-white font-bold border rounded-full border-blue-800 px-12 py-2.5">Login</button>
-            </div>
-            <!--====Humberger menu====-->
-            <div @click.away="humberger=false" class=" block lg:hidden" x-data="{humberger: false}">
-                <!--====menu button====-->
-                <button @click.prevent="humberger=!humberger" aria-label="Mobile Menu button"
-                    class="outline-none text-white p-1">
-                    <!---->
-                    <svg x-show="humberger===false" xmlns="http://www.w3.org/2000/svg" class="sm:h-12 sm:w-12 w-6 h-6"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <!---->
-                    <svg x-show="humberger===true" xmlns="http://www.w3.org/2000/svg" class="sm:h-12 sm:w-12 w-6 h-6"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-                <!--====Mobile menu====-->
-                <div :class="{'translate-x-0' : humberger, '-translate-x-full': !humberger  }"
-                    class="fixed lg:hidden w-3/5 transform transition-transform duration-700 ease-in-out z-50 bg-neutral-800 left-0 top-0 bottom-0 shadow-2xl">
-                    <!--====menu====-->
-                    <div class=" p-5">
-                        <!--====logo====-->
-                        <div class=" my-4">
-                            <!--====logo====-->
-                            <a href="/"
-                                class="flex sm:items-end items-start font-josefinsans font-bold sm:text-[34px] text-lg text-white space-x-3">
-                                <!--========-->
-                                <img height="100%" width="100%" class=" sm:w-10 w-5 h-5 sm:h-10 object-cover"
-                                    src="images/Logo/logo.png" alt="//">
-                                <!--========-->
-                                <p>Rekindle</p>
-                            </a>
-                        </div>
-                        <!--========-->
-                        <ul
-                            class="space-y-4 flex flex-col items-start justify-center text-white font-bold sm:text-base text-xs mt-10">
-                            <!---->
-                            <li>
-                                <a href="lead-genaration.html">Lead Generation</a>
-                            </li>
-                            <!---->
-                            <li>
-                                <a href="website-audits.html">Website Audits</a>
-                            </li>
-                            <!---->
-                            <li>
-                                <a href="consulting.html">Consulting</a>
-                            </li>
-                            <!---->
-                            <li x-data="{dropdown:false}" class=" relative">
-                                <!---->
-                                <a @click.prevent="dropdown=!dropdown" class=" flex items-end" href="#">
-                                    <span>Explore</span>
-                                    <svg :class="{'-rotate-180' : dropdown===true}" xmlns="http://www.w3.org/2000/svg"
-                                        class=" transform duration-500 sm:h-6 sm:w-6 w-3 h-3 ml-1" viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                            clip-rule="evenodd" />
-                                    </svg>
-                                </a>
-                                <!---->
-                                <ul x-ref="container1"
-                                    x-bind:style="dropdown == true ? 'max-height: ' + $refs.container1.scrollHeight + 'px' : ''"
-                                    class="space-y-4 ml-2 mt-2 relative overflow-hidden transition-all max-h-0 duration-700 list-disc list-inside">
-                                    <!---->
-                                    <li>
-                                        <!---->
-                                        <a href="#">Business</a>
-                                    </li>
-                                    <!---->
-                                    <li>
-                                        <!---->
-                                        <a href="#">Events & Entertainers</a>
-                                    </li>
-                                    <!---->
-                                    <li>
-                                        <!---->
-                                        <a href="#">House & Home</a>
-                                    </li>
-                                    <!---->
-                                    <li>
-                                        <!---->
-                                        <a href="#">Business</a>
-                                    </li>
-                                    <!---->
-                                    <li>
-                                        <!---->
-                                        <a href="#">Events & Entertainers</a>
-                                    </li>
-                                    <!---->
-                                    <li>
-                                        <!---->
-                                        <a href="#">House & Home</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
         <!--====================main====================-->
         <main>
             <!-- ==========section 001========== -->
@@ -522,232 +529,222 @@
                     <!--====text====-->
                     <p class=" lg:text-4xl text-3xl font-bold text-center pb-20 text-white px-10 sm:px-0">See what our clients are saying about us</p>
                     <!--====content====-->
-                    <div class="flex justify-center items-center sm:gap-5 absolute lg:static lg:left-0 lg:right-0 sm:-left-28 -left-72 -right-72 sm:-right-28 overflow-hidden mx-auto">
+                    <div id="mySwiper2" class="swiper">
                         <!--========-->
-                        <div class=" w-1/3 bg-blue-800 rounded-[20px] p-6 m-8 shadow-4xl">
+                        <div class="swiper-wrapper items-center">
                             <!--========-->
-                            <div class=" flex items-center space-x-1">
+                            <div class="swiper-slide duration-200 bg-blue-800 text-white rounded-[20px] p-6 shadow-4xl">
                                 <!--========-->
-                                <div class="w-2.5 h-2.5 bg-white rounded-full"></div>
+                                <div class="swiper-pagination1"></div>
                                 <!--========-->
-                                <div class="w-2.5 h-2.5 bg-white rounded-full"></div>
-                                <!--========-->
-                                <div class="w-2.5 h-2.5 bg-white rounded-full"></div>
-                            </div>
-                            <!--========-->
-                            <div class="md:p-5 lg:px-8 text-center">
-                                <!--========-->
-                                <div class=" relative">
+                                <div class="md:p-5 lg:px-8 text-center">
                                     <!--========-->
-                                    <img height="100%" width="100%" class=" w-auto h-auto object-cover mx-auto" src="images/Home/c1.png" alt="//">
+                                    <div class=" relative">
+                                        <!--========-->
+                                        <img height="100%" width="100%" class=" w-auto h-auto object-cover mx-auto" src="images/Home/c2.png"
+                                            alt="//">
+                                        <!--========-->
+                                        <span
+                                            class="absolute bottom-[22px] xl:right-[56px] lg:right-9 md:right-20 sm:right-[55px] right-[67px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                                <path
+                                                    d="M0.33309 7.5709C0.333331 3.57299 3.57447 0.332227 7.57239 0.332467L18.4322 0.333122C22.4301 0.333363 25.6709 3.57451 25.6706 7.57242L25.67 18.4322C25.6697 22.4301 22.4286 25.6709 18.4307 25.6706L7.57087 25.67C3.57295 25.6697 0.332195 22.4286 0.332436 18.4307L0.33309 7.5709Z"
+                                                    fill="#264187" />
+                                                <path
+                                                    d="M11.3331 8.11488C10.2803 7.5885 9.04166 8.35403 9.04166 9.53105V16.4692C9.04166 17.6462 10.2803 18.4117 11.3331 17.8853L18.2712 14.4163C19.4382 13.8328 19.4382 12.1674 18.2712 11.5839L11.3331 8.11488Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </span>
+                                    </div>
                                     <!--========-->
-                                    <span  class="absolute bottom-[22px] xl:right-[56px] lg:right-9 md:right-20 sm:right-[55px] right-[67px]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                                            <path
-                                                d="M0.33309 7.5709C0.333331 3.57299 3.57447 0.332227 7.57239 0.332467L18.4322 0.333122C22.4301 0.333363 25.6709 3.57451 25.6706 7.57242L25.67 18.4322C25.6697 22.4301 22.4286 25.6709 18.4307 25.6706L7.57087 25.67C3.57295 25.6697 0.332195 22.4286 0.332436 18.4307L0.33309 7.5709Z"
-                                                fill="#264187" />
-                                            <path
-                                                d="M11.3331 8.11488C10.2803 7.5885 9.04166 8.35403 9.04166 9.53105V16.4692C9.04166 17.6462 10.2803 18.4117 11.3331 17.8853L18.2712 14.4163C19.4382 13.8328 19.4382 12.1674 18.2712 11.5839L11.3331 8.11488Z"
-                                                fill="white" />
+                                    <p class=" font-bold lg:text-xl text-lg -mt-3">Robert</p>
+                                    <p class=" text-sm -mt-1">Project manager</p>
+                                    <!--========-->
+                                    <p class="mt-8 mb-4 lg:text-sm text-xs font-mulish text-left leading-5 ">Lorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                                <!--========-->
+                                <div class="md:p-5 lg:px-10 pb-10">
+                                    <!--========-->
+                                    <div class=" flex items-center justify-center space-x-2 text-[#FBBC05]">
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
                                         </svg>
-                                    </span>
-                                </div>
-                                <!--========-->
-                                <p class=" font-bold lg:text-xl text-lg text-white -mt-3">Robert</p>
-                                <p class=" text-sm text-white -mt-1">Project manager</p>
-                                <!--========-->
-                                <p class="mt-8 mb-4 lg:text-sm text-xs font-mulish text-left text-white leading-5 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            <!--========-->
-                            <div class="md:p-5 lg:px-10 pb-10">
-                                <!--========-->
-                                <div class=" flex items-center justify-center space-x-2 text-[#FBBC05]">
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </div>
-                                <!--========-->
-                                <div class="w-full h-0.5 bg-black my-5"></div>
-                            </div>
-                        </div>
-                        <!--========-->
-                        <div class=" w-1/3 bg-white rounded-[20px] p-6 shadow-4xl">
-                            <!--========-->
-                            <div class=" flex items-center space-x-1">
-                                <!--========-->
-                                <div class="w-2.5 h-2.5 bg-blue-800 rounded-full"></div>
-                                <!--========-->
-                                <div class="w-2.5 h-2.5 bg-blue-800 rounded-full"></div>
-                                <!--========-->
-                                <div class="w-2.5 h-2.5 bg-blue-800 rounded-full"></div>
-                            </div>
-                            <!--========-->
-                            <div class="p-5 lg:px-8 text-center">
-                                <!--========-->
-                                <div class=" relative">
-                                    <!--========-->
-                                    <img height="100%" width="100%" class=" w-auto h-auto object-fill mx-auto" src="images/Home/c2.png" alt="//">
-                                    <!--========-->
-                                    <span  class="absolute bottom-[22px] xl:right-[62px] lg:right-10 right-[70px] md:right-20">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                                            <path
-                                                d="M0.33309 7.5709C0.333331 3.57299 3.57447 0.332227 7.57239 0.332467L18.4322 0.333122C22.4301 0.333363 25.6709 3.57451 25.6706 7.57242L25.67 18.4322C25.6697 22.4301 22.4286 25.6709 18.4307 25.6706L7.57087 25.67C3.57295 25.6697 0.332195 22.4286 0.332436 18.4307L0.33309 7.5709Z"
-                                                fill="#264187" />
-                                            <path
-                                                d="M11.3331 8.11488C10.2803 7.5885 9.04166 8.35403 9.04166 9.53105V16.4692C9.04166 17.6462 10.2803 18.4117 11.3331 17.8853L18.2712 14.4163C19.4382 13.8328 19.4382 12.1674 18.2712 11.5839L11.3331 8.11488Z"
-                                                fill="white" />
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
                                         </svg>
-                                    </span>
-                                </div>
-                                <!--========-->
-                                <p class=" font-bold lg:text-xl text-lg text-black -mt-3">Robert</p>
-                                <p class=" text-sm text-black -mt-1">Project manager</p>
-                                <!--========-->
-                                <p class="mt-8 mb-4 lg:text-sm text-xs font-mulish text-left text-[#262626] leading-5 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                            </div>
-                            <!--========-->
-                            <div class="p-5 lg:px-10 pb-10">
-                                <!--========-->
-                                <div class=" flex items-center justify-center space-x-2 text-[#FBBC05]">
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                </div>
-                                <!--========-->
-                                <div class="w-full h-0.5 bg-black my-5"></div>
-                            </div>
-                        </div>
-                        <!--========-->
-                        <div class=" w-1/3 bg-blue-800 rounded-[20px] p-6 m-8 shadow-4xl">
-                            <!--========-->
-                            <div class=" flex items-center space-x-1">
-                                <!--========-->
-                                <div class="w-2.5 h-2.5 bg-white rounded-full"></div>
-                                <!--========-->
-                                <div class="w-2.5 h-2.5 bg-white rounded-full"></div>
-                                <!--========-->
-                                <div class="w-2.5 h-2.5 bg-white rounded-full"></div>
-                            </div>
-                            <!--========-->
-                            <div class="md:p-5 lg:px-8 text-center">
-                                <!--========-->
-                                <div class=" relative">
-                                    <!--========-->
-                                    <img height="100%" width="100%" class=" w-auto h-auto object-cover mx-auto" src="images/Home/c1.png"
-                                        alt="//">
-                                    <!--========-->
-                                    <span class="absolute bottom-[22px] xl:right-[56px] lg:right-9 md:right-20 sm:right-[55px] right-[67px]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                                            <path
-                                                d="M0.33309 7.5709C0.333331 3.57299 3.57447 0.332227 7.57239 0.332467L18.4322 0.333122C22.4301 0.333363 25.6709 3.57451 25.6706 7.57242L25.67 18.4322C25.6697 22.4301 22.4286 25.6709 18.4307 25.6706L7.57087 25.67C3.57295 25.6697 0.332195 22.4286 0.332436 18.4307L0.33309 7.5709Z"
-                                                fill="#264187" />
-                                            <path
-                                                d="M11.3331 8.11488C10.2803 7.5885 9.04166 8.35403 9.04166 9.53105V16.4692C9.04166 17.6462 10.2803 18.4117 11.3331 17.8853L18.2712 14.4163C19.4382 13.8328 19.4382 12.1674 18.2712 11.5839L11.3331 8.11488Z"
-                                                fill="white" />
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
                                         </svg>
-                                    </span>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                    <!--========-->
+                                    <div class="w-full h-0.5 bg-black my-5"></div>
+                                </div>
+                            </div> 
+                            <!--========-->
+                            <div class="swiper-slide duration-200 bg-blue-800 text-white rounded-[20px] p-6 shadow-4xl">
+                                <div class="swiper-pagination1"></div>
+                                <!--========-->
+                                <div class="md:p-5 lg:px-8 text-center">
+                                    <!--========-->
+                                    <div class=" relative">
+                                        <!--========-->
+                                        <img height="100%" width="100%" class=" w-auto h-auto object-cover mx-auto" src="images/Home/c3.png"
+                                            alt="//">
+                                        <!--========-->
+                                        <span
+                                            class="absolute bottom-[22px] xl:right-[56px] lg:right-9 md:right-20 sm:right-[55px] right-[67px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                                <path
+                                                    d="M0.33309 7.5709C0.333331 3.57299 3.57447 0.332227 7.57239 0.332467L18.4322 0.333122C22.4301 0.333363 25.6709 3.57451 25.6706 7.57242L25.67 18.4322C25.6697 22.4301 22.4286 25.6709 18.4307 25.6706L7.57087 25.67C3.57295 25.6697 0.332195 22.4286 0.332436 18.4307L0.33309 7.5709Z"
+                                                    fill="#264187" />
+                                                <path
+                                                    d="M11.3331 8.11488C10.2803 7.5885 9.04166 8.35403 9.04166 9.53105V16.4692C9.04166 17.6462 10.2803 18.4117 11.3331 17.8853L18.2712 14.4163C19.4382 13.8328 19.4382 12.1674 18.2712 11.5839L11.3331 8.11488Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <!--========-->
+                                    <p class=" font-bold lg:text-xl text-lg -mt-3">Robert</p>
+                                    <p class=" text-s -mt-1">Project manager</p>
+                                    <!--========-->
+                                    <p class="mt-8 mb-4 lg:text-sm text-xs font-mulish text-left leading-5 ">Lorem ipsum dolor sit
+                                        amet,
+                                        consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                                 <!--========-->
-                                <p class=" font-bold lg:text-xl text-lg text-white -mt-3">Robert</p>
-                                <p class=" text-sm text-white -mt-1">Project manager</p>
-                                <!--========-->
-                                <p class="mt-8 mb-4 lg:text-sm text-xs font-mulish text-left text-white leading-5 ">Lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <div class="md:p-5 lg:px-10 pb-10">
+                                    <!--========-->
+                                    <div class=" flex items-center justify-center space-x-2 text-[#FBBC05]">
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                    <!--========-->
+                                    <div class="w-full h-0.5 bg-black my-5"></div>
+                                </div>
                             </div>
                             <!--========-->
-                            <div class="md:p-5 lg:px-10 pb-10">
+                            <div class="swiper-slide duration-200 bg-blue-800 text-white rounded-[20px] p-6 shadow-4xl">
+                                <div class="swiper-pagination1"></div>
                                 <!--========-->
-                                <div class=" flex items-center justify-center space-x-2 text-[#FBBC05]">
+                                <div class="md:p-5 lg:px-8 text-center">
                                     <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
+                                    <div class=" relative">
+                                        <!--========-->
+                                        <img height="100%" width="100%" class=" w-auto h-auto object-cover mx-auto" src="images/Home/c1.png"
+                                            alt="//">
+                                        <!--========-->
+                                        <span
+                                            class="absolute bottom-[22px] xl:right-[56px] lg:right-9 md:right-20 sm:right-[55px] right-[67px]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                                                <path
+                                                    d="M0.33309 7.5709C0.333331 3.57299 3.57447 0.332227 7.57239 0.332467L18.4322 0.333122C22.4301 0.333363 25.6709 3.57451 25.6706 7.57242L25.67 18.4322C25.6697 22.4301 22.4286 25.6709 18.4307 25.6706L7.57087 25.67C3.57295 25.6697 0.332195 22.4286 0.332436 18.4307L0.33309 7.5709Z"
+                                                    fill="#264187" />
+                                                <path
+                                                    d="M11.3331 8.11488C10.2803 7.5885 9.04166 8.35403 9.04166 9.53105V16.4692C9.04166 17.6462 10.2803 18.4117 11.3331 17.8853L18.2712 14.4163C19.4382 13.8328 19.4382 12.1674 18.2712 11.5839L11.3331 8.11488Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </span>
+                                    </div>
                                     <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
+                                    <p class=" font-bold lg:text-xl text-lg -mt-3">Robert</p>
+                                    <p class=" text-s -mt-1">Project manager</p>
                                     <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
-                                    <!--========-->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
-                                            fill="currentColor" />
-                                    </svg>
+                                    <p class="mt-8 mb-4 lg:text-sm text-xs font-mulish text-left leading-5 ">Lorem ipsum dolor sit
+                                        amet,
+                                        consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 </div>
                                 <!--========-->
-                                <div class="w-full h-0.5 bg-black my-5"></div>
+                                <div class="md:p-5 lg:px-10 pb-10">
+                                    <!--========-->
+                                    <div class=" flex items-center justify-center space-x-2 text-[#FBBC05]">
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.27102 1.82333C8.69807 0.662408 7.04263 0.662405 6.46969 1.82333L5.11691 4.56434C5.08441 4.6302 5.02158 4.67584 4.94891 4.6864L1.92402 5.12595C0.642872 5.31211 0.13131 6.88652 1.05836 7.79017L3.24719 9.92375C3.29978 9.97501 3.32378 10.0489 3.31136 10.1213L2.79465 13.1339C2.5758 14.4099 3.91508 15.3829 5.06097 14.7805L7.76652 13.3581C7.83152 13.3239 7.90918 13.3239 7.97418 13.3581L10.6797 14.7805C11.8256 15.3829 13.1649 14.4099 12.946 13.1339L12.4293 10.1213C12.4169 10.0489 12.4409 9.97501 12.4935 9.92375L14.6823 7.79017C15.6094 6.88652 15.0978 5.31211 13.8167 5.12595L10.7918 4.6864C10.7191 4.67584 10.6563 4.6302 10.6238 4.56434L9.27102 1.82333Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </div>
+                                    <!--========-->
+                                    <div class="w-full h-0.5 bg-black my-5"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                   
                 </div>
             </section>
             <!-- ==========section 005========== -->
@@ -757,33 +754,41 @@
                     <!--====text====-->
                     <p class=" lg:text-4xl text-[28px] font-bold text-center pb-16">Companies</p>
                     <!--====content====-->
-                   <div class=" flex lg:gap-24 gap-20 items-center justify-center md:px-10 px-0 lg:static absolute bottom-12 sm:-left-24 sm:-right-24 -left-52 -right-52">
+                    <div id="mySwiper1" class="swiper">
                         <!--========-->
-                        <div>
+                        <div class="swiper-wrapper">
                             <!--========-->
-                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto" src="images/Home/com1.png" alt="//">
-                        </div>
-                        <!--========-->
-                        <div>
+                            <div class="swiper-slide">
+                                <!--========-->
+                                <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto" src="images/Home/com1.png"
+                                    alt="//">
+                            </div>
                             <!--========-->
-                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto" src="images/Home/com2.png" alt="//">
-                        </div>
-                        <!--========-->
-                        <div>
+                            <div class="swiper-slide">
+                                <!--========-->
+                                <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto" src="images/Home/com2.png"
+                                    alt="//">
+                            </div>
                             <!--========-->
-                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto" src="images/Home/com3.png" alt="//">
-                        </div>
-                        <!--========-->
-                        <div>
+                            <div class="swiper-slide">
+                                <!--========-->
+                                <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto" src="images/Home/com3.png"
+                                    alt="//">
+                            </div>
                             <!--========-->
-                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto" src="images/Home/com4.png" alt="//">
-                        </div>
-                        <!--========-->
-                        <div>
+                            <div class="swiper-slide">
+                                <!--========-->
+                                <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto" src="images/Home/com4.png"
+                                    alt="//">
+                            </div>
                             <!--========-->
-                            <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto" src="images/Home/com5.png" alt="//">
+                            <div class="swiper-slide">
+                                <!--========-->
+                                <img height="100%" width="100%" class=" lg:w-24 w-28 h-auto object-cover mx-auto" src="images/Home/com5.png"
+                                    alt="//">
+                            </div>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </section>
             <!-- ==========section 006========== -->
@@ -831,12 +836,12 @@
                     <div>
                         <!--====logo====-->
                         <a href="/"
-                            class="flex items-end font-josefinsans font-bold lg:text-3xl sm:text-xl text-base text-white space-x-3 leading-[2rem!important]">
+                            class="flex items-end font-josefinsans font-bold lg:text-2xl sm:text-lg text-sm text-white space-x-3 xl:leading-[2rem!important] leading-[1rem!important] whitespace-nowrap">
                             <!--========-->
-                            <img height="100%" width="100%" class=" w-7 h-7 lg:w-10 lg:h-10 object-cover"
+                            <img height="100%" width="100%" class=" w-7 h-7 xl:w-10 xl:h-10 object-cover"
                                 src="images/Logo/logo.png" alt="//">
                             <!--========-->
-                            <span>Rekindle</span>
+                            <span>Rekindle Data</span>
                         </a>
                         <!--====mobile dropdown====-->
                         <div class=" mt-5 space-y-4 block lg:hidden">
@@ -859,15 +864,15 @@
                                     class="space-y-2 relative overflow-hidden transition-all max-h-0 duration-700">
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-blue-50">
-                                        <a href="#">Find a Professional</a>
+                                        <a class="hover:underline" href="#">Find a Professional</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-blue-50">
-                                        <a href="#">how it works</a>
+                                        <a class="hover:underline" href="#">How it Works</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-blue-50">
-                                        <a href="#">Login</a>
+                                        <a class="hover:underline" href="#">Login</a>
                                     </li>
                                 </ul>
                             </div>
@@ -890,23 +895,23 @@
                                     class="space-y-2 relative overflow-hidden transition-all max-h-0 duration-700">
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">How it works</a>
+                                        <a class="hover:underline" href="#">How it works</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">Pricing</a>
+                                        <a class="hover:underline" href="#">Pricing</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">join as a Professional</a>
+                                        <a class="hover:underline" href="#">Join as a Professional</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">Help Centre</a>
+                                        <a class="hover:underline" href="#">Help Centre</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">Mobile App</a>
+                                        <a class="hover:underline" href="#">Mobile App</a>
                                     </li>
                                 </ul>
                             </div>
@@ -929,19 +934,19 @@
                                     class="space-y-2 relative overflow-hidden transition-all max-h-0 duration-700">
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">About Rekindle Data</a>
+                                        <a class="hover:underline" href="#">About Rekindle Data</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">Team</a>
+                                        <a class="hover:underline" href="#">Team</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">Careers</a>
+                                        <a class="hover:underline" href="#">Careers</a>
                                     </li>
                                     <!--========-->
                                     <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                        <a href="#">Blog</a>
+                                        <a class="hover:underline" href="#">Blog</a>
                                     </li>
                                 </ul>
                             </div>
@@ -955,15 +960,15 @@
                             <li class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2">For Customers</li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-blue-50">
-                                <a href="#">Find a Professional</a>
+                                <a class="hover:underline" href="#">Find a Professional</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-blue-50">
-                                <a href="#">how it works</a>
+                                <a class="hover:underline" href="#">How it Works</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-blue-50">
-                                <a href="#">Login</a>
+                                <a class="hover:underline" href="#">Login</a>
                             </li>
                         </ul>
                         <!--========-->
@@ -972,23 +977,23 @@
                             <li class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2">For Professional</li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">How it works</a>
+                                <a class="hover:underline" href="#">How it works</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">Pricing</a>
+                                <a class="hover:underline" href="#">Pricing</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">join as a Professional</a>
+                                <a class="hover:underline" href="#">Join as a Professional</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">Help Centre</a>
+                                <a class="hover:underline" href="#">Help Centre</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">Mobile App</a>
+                                <a class="hover:underline" href="#">Mobile App</a>
                             </li>
                         </ul>
                         <!--========-->
@@ -997,19 +1002,19 @@
                             <li class="sm:text-sm text-[10px] font-bold text-blue-50 pb-2">About</li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">About Rekindle Data</a>
+                                <a class="hover:underline" href="#">About Rekindle Data</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">Team</a>
+                                <a class="hover:underline" href="#">Team</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">Careers</a>
+                                <a class="hover:underline" href="#">Careers</a>
                             </li>
                             <!--========-->
                             <li class="sm:text-base text-xs font-mulish text-[#7C7C7C]">
-                                <a href="#">Blog</a>
+                                <a class="hover:underline" href="#">Blog</a>
                             </li>
                         </ul>
                     </div>
@@ -1018,7 +1023,7 @@
                         <!--========-->
                         <div class=" text-right text-white">
                             <!--========-->
-                            <p class="text-xs lg:text-[9px] font-mulish leading-tight">Team@bark.com</p>
+                            <p class="text-xs lg:text-[9px] font-mulish leading-tight">hello@rekindledata.com</p>
                             <!--========-->
                             <p class="lg:text-base text-sm leading-tight">(604) 222-2221</p>
                             <!--========-->
@@ -1026,88 +1031,113 @@
                                 week)</p>
                         </div>
                         <!--========-->
-                        <div x-data="{modal:false}" class=" mt-3 w-full sm:w-auto relative">
+                        <div x-data="{modal:false}" class=" mt-3 w-full sm:w-auto">
                             <!--========-->
-                            <button @click="modal=true"
-                                class="relative flex items-center h-7 sm:w-44 w-full sm:text-xs text-[8px] tracking-[0.005em] text-blue-50 placeholder-blue-50 rounded-md px-3 p-2 bg-[#666666] outline-none">
+                            <div  x-data="{select:'2'}" >
                                 <!--========-->
-                                <img height="100%" width="100%" class="w-auto h-auto object-cover mr-2"
-                                    src="images/icons/canada_flag.png" alt="//">
-                                <!--========-->
-                                <span>Canada</span>
-                                <!--========-->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-2 h-4 w-4" viewBox="0 0 20 20"
-                                    fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <!--========-->
-                            <div x-show="modal" x-transition
-                                class=" fixed left-0 right-0 top-0 bottom-0 bg-black bg-opacity-30 z-50 flex items-center justify-center shadow-5xl ">
-                                <!--========-->
-                                <div @click.away="modal=false"
-                                    class="md:w-3/5 w-11/12 h-[90%] bg-white rounded-xl  xl:p-20 p-16 px-5 flex lg:justify-center relative">
+                                <div @click="modal=true" class="relative h-7 sm:w-44 w-full sm:text-xs text-[8px] tracking-[0.005em] text-blue-50 placeholder-blue-50 rounded-md px-3 p-2 cursor-pointer bg-[#666666]">
                                     <!--========-->
-                                    <div class=" md:w-1/2 w-11/12 whitespace-nowrap">
+                                    <button x-show="select==='1'" @click="modal=false" class=" outline-none flex items-center">
                                         <!--========-->
-                                        <h1 class=" font-bold text-4xl text-black mb-10 font-mulish tracking-wider">Choose
-                                            country</h1>
+                                        <img height="100%" width="100%" class="w-4 h-4 object-contain mr-2" src="images/icons/gb-flag.png" alt="//">
                                         <!--========-->
-                                        <div class=" space-y-4 h-full overflow-y-auto">
+                                        <span>United Kingdom</span>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-2 h-4 w-4" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                    <!--========-->
+                                    <button x-show="select==='2'" @click="modal=false"
+                                        class=" outline-none flex items-center justify-between">
+                                        <!--========-->
+                                        <img height="100%" width="100%" class="h-4 w-4 object-contain mr-2" src="images/icons/ca-flag.png" alt="//">
+                                        <!--========-->
+                                        <span>Canada</span>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-2 h-4 w-4" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button>
+                                    <!--========-->
+                                    <button x-show="select==='3'" @click="modal=false"
+                                        class=" outline-none flex items-center justify-between">
+                                        <!--========-->
+                                        <img height="100%" width="100%" class="h-4 w-4 object-contain mr-2" src="images/icons/us-flag.png" alt="//">
+                                        <!--========-->
+                                        <span>United States</span>
+                                        <!--========-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="absolute right-2 h-4 w-4" viewBox="0 0 20 20"
+                                            fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </button> 
+                                </div>
+                                <!--========-->
+                                <div x-show="modal" x-transition
+                                    class=" fixed left-0 right-0 top-0 bottom-0 bg-black bg-opacity-30 z-50 flex items-center justify-center shadow-5xl">
+                                    <!--========-->
+                                    <div @click.away="modal=false"
+                                        class="md:w-3/5 w-11/12 h-[90%] bg-white rounded-xl  xl:p-20 p-16 px-5 flex lg:justify-center relative">
+                                        <!--========-->
+                                        <div class=" md:w-1/2 w-11/12 whitespace-nowrap">
                                             <!--========-->
-                                            <div
-                                                class="flex flex-row items-center p-2 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
-                                                <img alt="United Kingdom flag" width="28" height="20"
-                                                    src="https://d18jakcjgoan9.cloudfront.net/s/img/img/barkv2/flags/gb-flag.png!d=2MasO"
-                                                    data-was-processed="true">
-                                                <p class="mb-0">United Kingdom</p>
-                                            </div>
+                                            <h1 class=" font-bold text-4xl text-black mb-10 font-mulish tracking-wider">Choose
+                                                country</h1>
                                             <!--========-->
-                                            <div
-                                                class="flex flex-row items-center p-2 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
-                                                <img alt="United Kingdom flag" width="28" height="20"
-                                                    src="https://d18jakcjgoan9.cloudfront.net/s/img/img/barkv2/flags/gb-flag.png!d=2MasO"
-                                                    data-was-processed="true">
-                                                <p class="mb-0">Canada</p>
-                                            </div>
-                                            <!--========-->
-                                            <div
-                                                class="flex flex-row items-center p-2 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
-                                                <img alt="United Kingdom flag" width="28" height="20"
-                                                    src="https://d18jakcjgoan9.cloudfront.net/s/img/img/barkv2/flags/gb-flag.png!d=2MasO"
-                                                    data-was-processed="true">
-                                                <p class="mb-0">United States</p>
-                                            </div>
-                                            <!--========-->
-                                            <div
-                                                class="flex flex-row items-center p-2 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
-                                                <img alt="United Kingdom flag" width="28" height="20"
-                                                    src="https://d18jakcjgoan9.cloudfront.net/s/img/img/barkv2/flags/gb-flag.png!d=2MasO"
-                                                    data-was-processed="true">
-                                                <p class="mb-0">Canada</p>
-                                            </div>
-                                            <!--========-->
-                                            <div
-                                                class="flex flex-row items-center p-2 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
-                                                <img alt="United Kingdom flag" width="28" height="20"
-                                                    src="https://d18jakcjgoan9.cloudfront.net/s/img/img/barkv2/flags/gb-flag.png!d=2MasO"
-                                                    data-was-processed="true">
-                                                <p class="mb-0">United States</p>
+                                            <div class=" space-y-4 h-full overflow-y-auto">
+                                                <!--========-->
+                                                <div @click="modal=false">
+                                                    <!--========-->
+                                                    <div :class="{'border rounded-md':select==='1'}" @click="select='1'"
+                                                    class="flex flex-row items-center p-2 px-3 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
+                                                        <!--========-->
+                                                        <img height="100%" width="100%" class="w-7 h-7 mr-2 object-contain" src="images/icons/gb-flag.png "
+                                                            alt="//">
+                                                        <p class="mb-0">United Kingdom</p>
+                                                    </div>
+                                                </div>
+                                                <!--========-->
+                                                <div @click="modal=false">
+                                                    <!--========-->
+                                                    <div :class="{'border rounded-md':select==='2'}" @click="select='2'"
+                                                        class="flex flex-row items-center p-2 px-3 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
+                                                        <!--========-->
+                                                        <img height="100%" width="100%" class="w-7 h-7 mr-2 object-contain" src="images/icons/ca-flag.png" alt="//">
+                                                        <p class="mb-0">Canada</p>
+                                                    </div>
+                                                </div>
+                                                <!--========-->
+                                                <div @click="modal=false">
+                                                    <!--========-->
+                                                    <div :class="{'border rounded-md':select==='3'}" @click="select='3'"
+                                                        class="flex flex-row items-center p-2 px-3 rounded cursor-pointer text-gray-500 hover:text-gray-700 font-semibold space-x-3 text-xl">
+                                                        <!--========-->
+                                                        <img height="100%" width="100%" class="w-7 h-7 mr-2 object-contain" src="images/icons/us-flag.png" alt="//">
+                                                        <p class="mb-0">United States</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!---->
+                                    <!--========-->
                                     <button @click="modal=false"
-                                        class="absolute top-6 right-6 text-gray-500 hover:text-gray-700">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class=" w-6 h-6" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor" stroke-width="2">
+                                        class="absolute top-[5%] md:right-[20%] right-[5%] text-gray-500 hover:text-gray-700 z-50 p-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class=" w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                            stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                                         </svg>
                                     </button>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                         <!--========-->
                         <form class="relative mt-5  w-full sm:w-auto" action="#">
@@ -1160,12 +1190,82 @@
                 <!--====bottom====-->
                 <div>
                     <p class="sm:pt-16 pt-6 pb-6 text-[7px] sm:text-[10px] lg:text-sm font-mulish text-[#A5A5A5] text-center">©
-                        2022 Bark.com Global Limited. Terms & Conditions / Cookie policy / Privacy policy</p>
+                        2022 Rekindle Data Global Limited. Terms & Conditions / Cookie policy / Privacy policy</p>
                 </div>
             </div>
         </footer>
         
-        <!---->
+        <!-----Alpine js---->
         <script src="js/alpine.min.js" defer></script>
+        <!-----Swiper Js script---->
+        <script src="js/swiper-bundle.min.js"></script>
+
+        <script>
+            /*-----------------swiper 001----------------------*/
+            var swiper = new Swiper("#mySwiper1", {
+                breakpoints: {
+                0: {
+                    slidesPerView: 3,
+                    initialSlide: 2.5,
+                    spaceBetween: 76,
+                    centeredSlides: false,
+                    loop: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        type: 'bullets',
+                        clickable: 'true'
+                    },
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                },
+                768: {
+                    slidesPerView: 5,
+                    spaceBetween: 75,
+                },
+                1024: {
+                    slidesPerView: 5,
+                    
+                },
+            },
+            });
+            /*-----------------swiper 002----------------------*/
+            var swiper = new Swiper("#mySwiper2", {
+                effect: "coverflow",
+                grabCursor: true,
+                loop:true,
+                autoplay: {
+                    delay:3000,
+                    disableOnInteraction: false,
+                },
+                centeredSlides: true,
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 0,
+                    depth: 100,
+                    slideShadows: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination1",
+                    clickable: true
+                },
+                breakpoints: {
+                    0: {
+                       slidesPerView: "1.5",
+                       coverflowEffect: {
+                            modifier: 1.4,
+                        },
+                    },
+                    768: {
+                       slidesPerView: "2.5",
+                       coverflowEffect: {
+                            modifier: 1.2,
+                            depth: 200,
+                        },
+                    },
+                },
+            });
+        </script>
     </body>
 </html>
