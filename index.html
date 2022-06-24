@@ -29,7 +29,16 @@
                 background-color: white !important;
                 color: black !important;
             }
-            
+            #mySwiper2 .swiper-pagination1 .swiper-pagination-bullet {
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                opacity:0.2;
+            }
+            #mySwiper2 .swiper-pagination1 .swiper-pagination-bullet-active {
+                 opacity:1;
+                 background-color: #1B47B8;
+            }
         </style>
     </head>
 
@@ -537,7 +546,7 @@
                             <!--========-->
                             <div class="swiper-slide duration-200 bg-blue-800 text-white rounded-[20px] p-6 shadow-4xl">
                                 <!--========-->
-                                <div class="swiper-pagination1"></div>
+                                <div class="swiper-pagination1 space-x-3"></div>
                                 <!--========-->
                                 <div class="md:p-5 lg:px-8 text-center">
                                     <!--========-->
@@ -606,7 +615,7 @@
                             </div> 
                             <!--========-->
                             <div class="swiper-slide duration-200 bg-blue-800 text-white rounded-[20px] p-6 shadow-4xl">
-                                <div class="swiper-pagination1"></div>
+                                <div class="swiper-pagination1 space-x-3"></div>
                                 <!--========-->
                                 <div class="md:p-5 lg:px-8 text-center">
                                     <!--========-->
@@ -676,7 +685,7 @@
                             </div>
                             <!--========-->
                             <div class="swiper-slide duration-200 bg-blue-800 text-white rounded-[20px] p-6 shadow-4xl">
-                                <div class="swiper-pagination1"></div>
+                                <div class="swiper-pagination1  space-x-3"></div>
                                 <!--========-->
                                 <div class="md:p-5 lg:px-8 text-center">
                                     <!--========-->
@@ -1196,8 +1205,6 @@
                 </div>
             </div>
         </footer>
-
-       
         <!-----Swiper Js script---->
         <script src="js/swiper-bundle.min.js"></script>
 
@@ -1249,7 +1256,8 @@
                 },
                 pagination: {
                     el: ".swiper-pagination1",
-                    clickable: true
+
+                    clickable: true,
                 },
                 breakpoints: {
                     0: {
